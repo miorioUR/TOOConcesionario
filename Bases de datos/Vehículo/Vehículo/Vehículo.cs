@@ -86,9 +86,9 @@ namespace Vehiculo
         {
             vehiculos.IndexOf(v);//terminar
         }
-        public static void DELETEVehiculo(Vehiculo v)
+        public static bool DELETEVehiculo(Vehiculo v)
         {
-            vehiculos.delet;
+            return vehiculos.Remove(v);
         }
     }
 }
