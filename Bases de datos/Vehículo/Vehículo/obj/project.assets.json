@@ -180,19 +180,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\JAVI\\.nuget\\packages\\": {}
+    "C:\\Users\\LordM\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\JAVI\\Documents\\GitHub\\TOOConcesionario\\Bases de datos\\Vehículo\\Vehículo\\Vehiculo.csproj",
+      "projectUniqueName": "C:\\Users\\LordM\\OneDrive\\Documentos\\GitHub\\TOOConcesionario\\Bases de datos\\Vehículo\\Vehículo\\Vehiculo.csproj",
       "projectName": "Vehiculo",
-      "projectPath": "C:\\Users\\JAVI\\Documents\\GitHub\\TOOConcesionario\\Bases de datos\\Vehículo\\Vehículo\\Vehiculo.csproj",
-      "packagesPath": "C:\\Users\\JAVI\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\JAVI\\Documents\\GitHub\\TOOConcesionario\\Bases de datos\\Vehículo\\Vehículo\\obj\\",
+      "projectPath": "C:\\Users\\LordM\\OneDrive\\Documentos\\GitHub\\TOOConcesionario\\Bases de datos\\Vehículo\\Vehículo\\Vehiculo.csproj",
+      "packagesPath": "C:\\Users\\LordM\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\LordM\\OneDrive\\Documentos\\GitHub\\TOOConcesionario\\Bases de datos\\Vehículo\\Vehículo\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\JAVI\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\LordM\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [

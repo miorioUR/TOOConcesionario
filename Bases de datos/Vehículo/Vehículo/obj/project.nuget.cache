@@ -1,11 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "w9kbI11TB7hte8gW4DY2xIACykGV8NU/XalODJ2h1nUUN2TMUQ88KROykVRaNcCNpK2zShqxCBb2yPt3uCH2Sg==",
+  "dgSpecHash": "XoEXhQfiZhMK2koJgZxIVrEA/NzQtx7diMj2JAdMI17ZX3fZckj5hXPE2xWOXb4lRxDMGjNVIEBsoIE15ANT0w==",
   "success": true,
-  "projectFilePath": "C:\\Users\\JAVI\\Documents\\GitHub\\TOOConcesionario\\Bases de datos\\Vehículo\\Vehículo\\Vehiculo.csproj",
+  "projectFilePath": "C:\\Users\\LordM\\OneDrive\\Documentos\\GitHub\\TOOConcesionario\\Bases de datos\\Vehículo\\Vehículo\\Vehiculo.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\JAVI\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
-    "C:\\Users\\JAVI\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512"
+    "C:\\Users\\LordM\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
+    "C:\\Users\\LordM\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512"
   ],
   "logs": []
 }
