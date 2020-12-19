@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30523.141
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BD", "BD\BD.csproj", "{54A7C357-FDFF-4F9C-901E-809BBD590FC1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ModeloDominio", "ModeloDominio\ModeloDominio.csproj", "{EC6B5AB3-5BA5-4846-BA32-91CF37445704}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Persistencia", "Persistencia\Persistencia.csproj", "{AA932877-707A-4B72-B424-1DAA0A677283}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{54A7C357-FDFF-4F9C-901E-809BBD590FC1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{54A7C357-FDFF-4F9C-901E-809BBD590FC1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{54A7C357-FDFF-4F9C-901E-809BBD590FC1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{54A7C357-FDFF-4F9C-901E-809BBD590FC1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EC6B5AB3-5BA5-4846-BA32-91CF37445704}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EC6B5AB3-5BA5-4846-BA32-91CF37445704}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EC6B5AB3-5BA5-4846-BA32-91CF37445704}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EC6B5AB3-5BA5-4846-BA32-91CF37445704}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AA932877-707A-4B72-B424-1DAA0A677283}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AA932877-707A-4B72-B424-1DAA0A677283}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AA932877-707A-4B72-B424-1DAA0A677283}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AA932877-707A-4B72-B424-1DAA0A677283}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {7279BB56-EB73-4849-937D-C80DA563C89C}
+	EndGlobalSection
+EndGlobal
