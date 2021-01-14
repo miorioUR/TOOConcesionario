@@ -1,0 +1,70 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{829BDCB3-0232-4B4E-9D0F-48D68A5E1EA7}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>PersPresupuestos</RootNamespace>
+    <AssemblyName>PersPresupuestos</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="PersistenciaPresupuestos.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BD\BaseDatos.csproj">
+      <Project>{abffa57e-9624-465e-b277-a1c671dcc801}</Project>
+      <Name>BaseDatos</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MDCliente\MDCliente.csproj">
+      <Project>{abb09233-e9bb-47d2-a726-5c83b3238ab4}</Project>
+      <Name>MDCliente</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MDPresupuestos\MDPresupuesto.csproj">
+      <Project>{06f9fe01-05be-4cce-890f-90df9b52efdd}</Project>
+      <Name>MDPresupuesto</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MDVehiculo\MDVehiculo.csproj">
+      <Project>{b70c3a85-0312-43ae-84ab-a1177cb2ffda}</Project>
+      <Name>MDVehiculo</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PersistenciaCliente\PersCliente.csproj">
+      <Project>{771c3f54-ed32-4876-89ec-062b6c5fbc9b}</Project>
+      <Name>PersCliente</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

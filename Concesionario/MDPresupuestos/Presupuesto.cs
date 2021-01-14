@@ -93,7 +93,7 @@ namespace MDPresupuesto
     public class Empleado
     {
         private String dni, nombre;
-        protected Empleado(string iden, string nom)
+        public Empleado(string iden, string nom)
         {
             this.dni = iden;
             this.nombre = nom;

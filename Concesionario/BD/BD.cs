@@ -8,7 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BD
+namespace BaseDatos
 {
     public class BD
     {
@@ -141,6 +141,13 @@ namespace BD
             this.nombre = c.Nombre;  
             this.telefono = c.Telefono;
             this.valor = (CategoriaDato) c.Valor; //Es esto correcto?
+        }
+        public ClienteDato(string dni, string nombre, string telefono, CategoriaDato valor)
+        {
+            this.dni = dni;
+            this.nombre = nombre;
+            this.telefono = telefono;
+            this.valor = valor;
         }
 
         public ClienteDato(string dni) : this(new Cliente(dni, null, null, Categoria.A)) { }
