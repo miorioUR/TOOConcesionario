@@ -1,7 +1,9 @@
 ﻿using MDCliente;
 using MDPresupuesto;
+using MDVehiculo;
 using PersCliente;
 using PersPresupuestos;
+using PersVehiculo;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -46,6 +48,25 @@ namespace LogicaNegocio
         public void ModificarPresupuesto(Presupuesto p)
         {
             PersistenciaPresupuesto.Modificar(p);
+        }
+    }
+    public class LNVehiculos
+    {
+        public void AltaVehiculo(Vehiculo v)
+        {
+            PersistenciaVehiculo.Añadir(v);
+        }
+        public bool ExisteVehiculo(Vehiculo v)
+        {
+            return PersistenciaVehiculo.Buscar(v) != null;
+        }
+        public void BajaVehiculo(Vehiculo v)
+        {
+            PersistenciaVehiculo.Eliminar(v);
+        }
+        public void ModificarVehiculo(Vehiculo v)
+        {
+            PersistenciaVehiculo.Modificar(v);
         }
     }
 }

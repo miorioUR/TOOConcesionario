@@ -17,6 +17,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PersPresupuestos", "PersPre
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LogicaNegocio", "LNCliente\LogicaNegocio.csproj", "{383CB744-80FF-4D1E-A2E3-D6912179A735}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PersVehiculo", "PersVehiculo\PersVehiculo.csproj", "{DB44C7D5-9BB4-438D-8BE0-89DB53D87316}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -51,6 +53,10 @@ Global
 		{383CB744-80FF-4D1E-A2E3-D6912179A735}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{383CB744-80FF-4D1E-A2E3-D6912179A735}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{383CB744-80FF-4D1E-A2E3-D6912179A735}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DB44C7D5-9BB4-438D-8BE0-89DB53D87316}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DB44C7D5-9BB4-438D-8BE0-89DB53D87316}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DB44C7D5-9BB4-438D-8BE0-89DB53D87316}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DB44C7D5-9BB4-438D-8BE0-89DB53D87316}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{383CB744-80FF-4D1E-A2E3-D6912179A735}</ProjectGuid>
+    <ProjectGuid>{DB44C7D5-9BB4-438D-8BE0-89DB53D87316}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>LNCliente</RootNamespace>
-    <AssemblyName>LNCliente</AssemblyName>
+    <RootNamespace>PersVehiculo</RootNamespace>
+    <AssemblyName>PersVehiculo</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
@@ -41,7 +41,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="LN.cs" />
+    <Compile Include="PersistenciaVehiculo.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -49,29 +49,9 @@
       <Project>{abffa57e-9624-465e-b277-a1c671dcc801}</Project>
       <Name>BaseDatos</Name>
     </ProjectReference>
-    <ProjectReference Include="..\MDCliente\MDCliente.csproj">
-      <Project>{abb09233-e9bb-47d2-a726-5c83b3238ab4}</Project>
-      <Name>MDCliente</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\MDPresupuestos\MDPresupuesto.csproj">
-      <Project>{06f9fe01-05be-4cce-890f-90df9b52efdd}</Project>
-      <Name>MDPresupuesto</Name>
-    </ProjectReference>
     <ProjectReference Include="..\MDVehiculo\MDVehiculo.csproj">
       <Project>{b70c3a85-0312-43ae-84ab-a1177cb2ffda}</Project>
       <Name>MDVehiculo</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\PersistenciaCliente\PersCliente.csproj">
-      <Project>{771c3f54-ed32-4876-89ec-062b6c5fbc9b}</Project>
-      <Name>PersCliente</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\PersPresupuestos\PersPresupuestos.csproj">
-      <Project>{829bdcb3-0232-4b4e-9d0f-48d68a5e1ea7}</Project>
-      <Name>PersPresupuestos</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\PersVehiculo\PersVehiculo.csproj">
-      <Project>{db44c7d5-9bb4-438d-8be0-89db53d87316}</Project>
-      <Name>PersVehiculo</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -190,7 +190,7 @@ namespace BaseDatos
 
         private List<ExtraDato> listaExtras = null;
 
-        protected VehiculoDato(Vehiculo v)
+        public VehiculoDato(Vehiculo v) 
         {
             this.numBastidor = v.NumBastidor;
             this.marca = v.Marca;

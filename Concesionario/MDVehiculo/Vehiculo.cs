@@ -16,7 +16,7 @@ namespace MDVehiculo
 
         private List<Extra> listaExtras = null;
 
-        protected Vehiculo(string numBastidor, string marca, string modelo, int potencia, double preciobase)
+        public Vehiculo(string numBastidor, string marca, string modelo, int potencia, double preciobase)
         {
             this.numBastidor = numBastidor;
             this.marca = marca;
