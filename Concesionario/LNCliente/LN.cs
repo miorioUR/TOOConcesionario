@@ -69,4 +69,6 @@ namespace LogicaNegocio
             PersistenciaVehiculo.Modificar(v);
         }
     }
+    //clase Ln
+    // constructor LN (e, LNCLiente(e),...)
 }

@@ -281,7 +281,7 @@ namespace BaseDatos
             this.fecha = DateTime.Now;
             this.empleado = new EmpleadoDato(p.Empleado.Dni,p.Empleado.Nombre);
             this.cliente = new ClienteDato(p.Cliente);
-            this.listaValoraciones = p.ListaValoraciones; // Como paso esto a valoraciondatos?
+            this.listaValoraciones = p.ListaValoraciones; 
             this.estado = EstadoDato.propuesto;
         }
         public string Id
