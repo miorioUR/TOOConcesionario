@@ -122,27 +122,47 @@ namespace BaseDatos
         {
             presupuestos.Add(p);
         }
-        public static bool DELETEPresupuesto(string id)
+        public static bool DELETEPresupuesto(PresupuestoDato p)
         {
-            return presupuestos.Remove(id);
+            return presupuestos.Remove(p);
         }
         public static void UPDATEPresupuesto(PresupuestoDato p)
         {
             presupuestos.Remove(p.Id);
             presupuestos.Add(p);
         }
-        public static PresupuestoDato SELECTPresupuesto(string id)
+        public static PresupuestoDato SELECTPresupuesto(PresupuestoDato p)
         {
-            return presupuestos[id];
+            return presupuestos[p.id];
         }
         public static void INSERTValoracion(PresupuestoDato p, ValoracionDato v)
         {
             presupuestos[p.id].ListaValoraciones.Add(v);
         }
+        public static ValoracionDato SELECTValoracion(PresupuestoDato p,string id)
+        {
+            foreach(ValoracionDato vd in presupuestos[p.id].ListaValoraciones)
+            {
+                if (vd.Vehiculo.NumBastidor.Equals(id))
+                {
+                    return vd;
+                }
+            }
+            return null;
+        }
         public static void UPDATEValoracion(PresupuestoDato p,ValoracionDato v)
         {
-            presupuestos[p.Id].ListaValoraciones.Remove(presupuestos[p.Id].ListaValoraciones.);
+            foreach(ValoracionDato vd in p.ListaValoraciones){
+                if (vd.Vehiculo.Equals(v.Vehiculo))
+                {
+                    presupuestos[p.Id].ListaValoraciones.Remove(vd);
+                }
+            }
             presupuestos[p.Id].ListaValoraciones.Add(v);
+        }
+        public static void DELETEValoracion(PresupuestoDato p, ValoracionDato v)
+        {
+            presupuestos[p.Id].ListaValoraciones.Remove(v);
         }
     }
     //ASIGNACION DE KEYS ------------------------------------
