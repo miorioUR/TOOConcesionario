@@ -14,6 +14,13 @@ namespace LogicaNegocio
 {
     public class LNCliente
     {
+        Empleado e;
+        internal LNCliente(Empleado emp)
+        {
+            this.e = emp;
+        }
+
+
         public void AltaCliente(Cliente c)
         {
             PersistenciaCliente.Añadir(c);
@@ -31,27 +38,15 @@ namespace LogicaNegocio
             PersistenciaCliente.Modificar(c);
         }
     }
-    public class LNPresupuestos
+    public class LNVehiculo
     {
-        public void AltaPresupuesto(Presupuesto p)
+        Empleado e;
+        internal LNVehiculo(Empleado emp)
         {
-            PersistenciaPresupuesto.Añadir(p);
+            this.e = emp;
         }
-        public bool ExistePresupuesto(Presupuesto p)
-        {
-            return (PersistenciaPresupuesto.Buscar(p) != null);
-        }
-        public void BajaPresupuesto(Presupuesto p)
-        {
-            PersistenciaPresupuesto.Eliminar(p);
-        }
-        public void ModificarPresupuesto(Presupuesto p)
-        {
-            PersistenciaPresupuesto.Modificar(p);
-        }
-    }
-    public class LNVehiculos
-    {
+
+
         public void AltaVehiculo(Vehiculo v)
         {
             PersistenciaVehiculo.Añadir(v);
@@ -69,6 +64,46 @@ namespace LogicaNegocio
             PersistenciaVehiculo.Modificar(v);
         }
     }
-    //clase Ln
-    // constructor LN (e, LNCLiente(e),...)
+    public class LNPresupuesto
+    {
+        Empleado e;
+        internal LNPresupuesto(Empleado emp)
+        {
+            this.e = emp;
+        }
+
+
+        public void AltaPresupuesto(Presupuesto p)
+        {
+            PersistenciaPresupuesto.Añadir(p);
+        }
+        public bool ExistePresupuesto(Presupuesto p)
+        {
+            return (PersistenciaPresupuesto.Buscar(p) != null);
+        }
+        public void BajaPresupuesto(Presupuesto p)
+        {
+            PersistenciaPresupuesto.Eliminar(p);
+        }
+        public void ModificarPresupuesto(Presupuesto p)
+        {
+            PersistenciaPresupuesto.Modificar(p);
+        }
+    }
+    
+    public class LN
+    {
+        Empleado e;
+        LNCliente lncliente;
+        LNVehiculo lnvehiculo;
+        LNPresupuesto lnpreupuesto;
+
+        public LN(Empleado emp,LNCliente lnc,LNVehiculo lnv, LNPresupuesto lnp)
+        {
+            this.e = emp;
+            this.lncliente = lnc;
+            this.lnvehiculo = lnv;
+            this.lnpreupuesto = lnp;
+        }
+    }
 }

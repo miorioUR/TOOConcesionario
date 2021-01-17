@@ -45,32 +45,5 @@ namespace PersCliente
         {
             BD.DELETECliente(new ClienteDato(c.Dni));
         }
-
-
-        public static CategoriaDato CambioACategoriaDato(Categoria c)
-        {
-            if (c.Equals(CategoriaDato.A))
-            {
-                return CategoriaDato.A;
-            }
-            else if (c.Equals(CategoriaDato.B))
-            {
-                return CategoriaDato.B;
-            }
-            return CategoriaDato.C;
-        }
-
-        public static Categoria CambioACategoria(CategoriaDato c)
-        {
-            if (c.Equals(Categoria.A))
-            {
-                return Categoria.A;
-            }
-            else if (c.Equals(Categoria.B))
-            {
-                return Categoria.B;
-            }
-            return Categoria.C;
-        }
     }
 }

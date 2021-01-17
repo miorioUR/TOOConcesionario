@@ -49,10 +49,6 @@
       <Project>{abb09233-e9bb-47d2-a726-5c83b3238ab4}</Project>
       <Name>MDCliente</Name>
     </ProjectReference>
-    <ProjectReference Include="..\MDVehiculo\MDVehiculo.csproj">
-      <Project>{b70c3a85-0312-43ae-84ab-a1177cb2ffda}</Project>
-      <Name>MDVehiculo</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -51,17 +51,13 @@
       <Project>{abffa57e-9624-465e-b277-a1c671dcc801}</Project>
       <Name>BaseDatos</Name>
     </ProjectReference>
-    <ProjectReference Include="..\MDCliente\MDCliente.csproj">
-      <Project>{abb09233-e9bb-47d2-a726-5c83b3238ab4}</Project>
-      <Name>MDCliente</Name>
+    <ProjectReference Include="..\ModeloDominio\ModeloDominio.csproj">
+      <Project>{f0d0bad9-d25f-4b27-953b-1995d695969b}</Project>
+      <Name>ModeloDominio</Name>
     </ProjectReference>
-    <ProjectReference Include="..\MDPresupuestos\MDPresupuesto.csproj">
-      <Project>{06f9fe01-05be-4cce-890f-90df9b52efdd}</Project>
-      <Name>MDPresupuesto</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\MDVehiculo\MDVehiculo.csproj">
-      <Project>{b70c3a85-0312-43ae-84ab-a1177cb2ffda}</Project>
-      <Name>MDVehiculo</Name>
+    <ProjectReference Include="..\Utilidades\Utilidades.csproj">
+      <Project>{3a0d2ada-8081-4239-89d9-903d1233c350}</Project>
+      <Name>Utilidades</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
