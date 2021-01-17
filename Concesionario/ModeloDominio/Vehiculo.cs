@@ -13,6 +13,7 @@ namespace MDVehiculo
         private string modelo;
         private int potencia;
         private double precio;
+        private double iva = 0.1;
 
         private List<Extra> listaExtras = null;
 
@@ -22,7 +23,7 @@ namespace MDVehiculo
             this.marca = marca;
             this.modelo = modelo;
             this.potencia = potencia;
-            precio = preciobase;
+            this.precio = preciobase;
         }
 
         public string NumBastidor
@@ -60,6 +61,13 @@ namespace MDVehiculo
             set
             { precio = value; }
         }
+        public double Iva
+        {
+            get
+            { return iva;}
+            set
+            { precio = value; }
+        }
         public List<Extra> ListaExtras
         {
             get
@@ -80,6 +88,7 @@ namespace MDVehiculo
 
         protected VehiculoSegundaMano(string numBastidor, string marca, string modelo, int potencia, double preciobase, string matricula, DateTime fechaMatricula) : base(numBastidor, marca, modelo, potencia, preciobase)
         {
+            base.Iva = IVA;
             this.matricula = matricula;
             fechaMatriculacion = fechaMatricula;
         }
@@ -98,13 +107,7 @@ namespace MDVehiculo
             { fechaMatriculacion = value; }
         }
     }
-    public class VehiculoPrimeraMano : Vehiculo
-    {
-        private const double IVA = 0.1;
-
-        protected VehiculoPrimeraMano(string numBastidor, string marca, string modelo, int potencia, double preciobase) : base(numBastidor, marca, modelo, potencia, preciobase) { }
-    }
-    public class Extra
+    public class Extra : IEquatable<Extra>
     {
         private string nombre;
         private double precio;
@@ -127,6 +130,10 @@ namespace MDVehiculo
             { return precio; }
             set
             { precio = value; }
+        }
+        public bool Equals(Extra e2)
+        {
+            return e2.nombre==this.nombre;
         }
     }
 }

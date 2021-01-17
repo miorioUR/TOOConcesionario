@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace MDPresupuesto
 {
-    public class Presupuesto
+    public class Presupuesto : IEquatable<Presupuesto>
     {
         internal string id;
         private DateTime fecha;
@@ -57,12 +57,16 @@ namespace MDPresupuesto
             get { return estado; }
             set { estado = value; }
         }
+        public bool Equals(Presupuesto p)
+        {
+            return this.Id == p.Id;
+        }
     }
     public enum Estado
     {
         aceptado, desestimado, pendiente, propuesto
     }
-    public class Valoracion
+    public class Valoracion : IEquatable<Valoracion>
     {
         private Vehiculo vehiculo;
         private double precio;
@@ -88,6 +92,11 @@ namespace MDPresupuesto
         {
             get { return aceptado; }
             set { aceptado = value; }
+        }
+
+        public bool Equals(Valoracion v2)
+        {
+            return v2.Vehiculo.NumBastidor == this.Vehiculo.NumBastidor;
         }
     }
     public class Empleado

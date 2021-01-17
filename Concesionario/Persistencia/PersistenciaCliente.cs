@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Utilidades;
 
 namespace PersCliente
 {
@@ -14,7 +15,7 @@ namespace PersCliente
         //Post: Añade c
         public static void Añadir(Cliente c)
         {
-            BD.INSERTCliente(new ClienteDato(c.Dni, c.Nombre, c.Telefono, PersistenciaCliente.CambioACategoriaDato(c.Valor)));
+            BD.INSERTCliente(new ClienteDato(c.Dni, c.Nombre, c.Telefono, Conversores.CambioACategoriaDato(c.Valor)));
         }
 
         //Pre: c != null. 
@@ -24,7 +25,7 @@ namespace PersCliente
             if (BD.SELECTCliente(new ClienteDato(c.Dni)) != null)
             {
                 ClienteDato dato = BD.SELECTCliente(new ClienteDato(c.Dni));
-                return new Cliente(dato.Dni, dato.Nombre, dato.Telefono, PersistenciaCliente.CambioACategoria(dato.Valor));
+                return new Cliente(dato.Dni, dato.Nombre, dato.Telefono, Conversores.CambioACategoria(dato.Valor));
             }
             else
             {
@@ -36,7 +37,7 @@ namespace PersCliente
         //Post: Modifica c.
         public static void Modificar(Cliente c)
         {
-            BD.UPDATECliente(new ClienteDato(c.Dni, c.Nombre, c.Telefono, PersistenciaCliente.CambioACategoriaDato(c.Valor)));
+            BD.UPDATECliente(new ClienteDato(c.Dni, c.Nombre, c.Telefono, Conversores.CambioACategoriaDato(c.Valor)));
         }
 
         //Pre: c != null. c no existe.

@@ -16,6 +16,8 @@ namespace BaseDatos
         private static TablaClientes clientes;
         private static TablaVehiculo vehiculos;
         private static TablaPresupuestos presupuestos;
+        //private static TablaValoraciones valoraciones;
+        private static TablaExtras extras;
         //CONSTRUCTOR------------------------
         private BD() { }
         //MODIFICACIONES DE TABLAS----------------------------
@@ -45,6 +47,15 @@ namespace BaseDatos
                 if (presupuestos == null)
                     presupuestos = new TablaPresupuestos();
                 return presupuestos;
+            }
+        }
+        public static TablaExtras Extras
+        {
+            get
+            {
+                if(extras == null)
+                    extras = new TablaExtras();
+                return extras;
             }
         }
         //METODOS CLIENTE------------------------------
@@ -79,12 +90,32 @@ namespace BaseDatos
         }
         public static void UPDATEVehiculo(VehiculoDato v)
         {
-            vehiculos.Remove(vehiculos[v.NumBastidor]);
+            vehiculos.Remove(v.NumBastidor);
             vehiculos.Add(v);
         }
         public static bool DELETEVehiculo(VehiculoDato v)
         {
             return vehiculos.Remove(v);
+        }
+        public static void INSERTExtra(VehiculoDato v,ExtraDato e)
+        {
+            vehiculos[v.NumBastidor].ListaExtras.Add(e);
+            extras.Add(e);
+        }
+        public static ExtraDato SELECTExtra(ExtraDato e)
+        {
+            return extras[e.Nombre];
+        }
+        public static void UPDATEExtra(ExtraDato e)
+        {
+
+            extras.Remove(e.Nombre);
+            extras.Add(e);
+        }
+        public static void DELETEExtra(VehiculoDato v, ExtraDato e)
+        {
+            vehiculos[v.NumBastidor].ListaExtras.Remove(e);
+            extras.Remove(e);
         }
         //METODOS PRESUPUESTOS ----------------------------------------
         public static void INSERTPresupuesto(PresupuestoDato p)
@@ -103,6 +134,15 @@ namespace BaseDatos
         public static PresupuestoDato SELECTPresupuesto(string id)
         {
             return presupuestos[id];
+        }
+        public static void INSERTValoracion(PresupuestoDato p, ValoracionDato v)
+        {
+            presupuestos[p.id].ListaValoraciones.Add(v);
+        }
+        public static void UPDATEValoracion(PresupuestoDato p,ValoracionDato v)
+        {
+            presupuestos[p.Id].ListaValoraciones.Remove(presupuestos[p.Id].ListaValoraciones.);
+            presupuestos[p.Id].ListaValoraciones.Add(v);
         }
     }
     //ASIGNACION DE KEYS ------------------------------------
@@ -125,6 +165,13 @@ namespace BaseDatos
         protected override string GetKeyForItem(PresupuestoDato p)
         {
             return p.id;
+        }
+    }
+    public class TablaExtras : KeyedCollection<string, ExtraDato>
+    {
+        protected override string GetKeyForItem(ExtraDato e)
+        {
+            return e.Nombre;
         }
     }
     //CLASES CLIENTE ----------------------------------------------
@@ -187,8 +234,9 @@ namespace BaseDatos
         private string modelo;
         private int potencia;
         private double precio;
+        private double iva;
 
-        private List<ExtraDato> listaExtras = null;
+        private List<ExtraDato> listaExtras;
 
         public VehiculoDato(Vehiculo v) 
         {
@@ -196,7 +244,9 @@ namespace BaseDatos
             this.marca = v.Marca;
             this.modelo = v.Modelo;
             this.potencia = v.Potencia;
-            this.precio = v.Precio * 1.1;
+            this.precio = v.Precio;
+            this.iva = v.Iva;
+            this.listaExtras = new List<ExtraDato>();
         }
 
         public string NumBastidor
@@ -223,6 +273,16 @@ namespace BaseDatos
         {
             get
             { return precio; }
+        }
+        public double Iva
+        {
+            get
+            { return iva; }
+        }
+        public List<ExtraDato> ListaExtras
+        {
+            get
+            { return listaExtras; }
         }
     }
     public class VehiculoSegundaManoDato : VehiculoDato
@@ -281,7 +341,7 @@ namespace BaseDatos
             this.fecha = DateTime.Now;
             this.empleado = new EmpleadoDato(p.Empleado.Dni,p.Empleado.Nombre);
             this.cliente = new ClienteDato(p.Cliente);
-            this.listaValoraciones = p.ListaValoraciones; 
+            this.listaValoraciones = Conversores.CambioAListaValoracionDato(p.ListaValoraciones); 
             this.estado = EstadoDato.propuesto;
         }
         public string Id
