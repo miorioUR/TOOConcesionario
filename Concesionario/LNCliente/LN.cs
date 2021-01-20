@@ -53,7 +53,7 @@ namespace LogicaNegocio
         }
         public bool ExisteVehiculo(Vehiculo v)
         {
-            return PersistenciaVehiculo.Buscar(v) != null;
+            return PersistenciaVehiculo.Buscar(v.NumBastidor) != null;
         }
         public void BajaVehiculo(Vehiculo v)
         {
@@ -62,6 +62,22 @@ namespace LogicaNegocio
         public void ModificarVehiculo(Vehiculo v)
         {
             PersistenciaVehiculo.Modificar(v);
+        }
+        public void AltaExtra(Vehiculo v, Extra e)
+        {
+            PersistenciaVehiculo.AñadirExtra(v, e);
+        }
+        public void ExisteExtra(Extra e)
+        {
+            PersistenciaVehiculo.BuscarExtra(e.Nombre);
+        }
+        public void BajaExtra(Vehiculo v, Extra e)
+        {
+            PersistenciaVehiculo.EliminarExtra(v,e);
+        }
+        public void ModificarExtra(Extra e)
+        {
+            PersistenciaVehiculo.ModificarExtra(e);
         }
     }
     public class LNPresupuesto

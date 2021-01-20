@@ -329,10 +329,10 @@ namespace BaseDatos
         private string nombre;
         private double precio;
 
-        ExtraDato(string nombre, double precio)
+        public ExtraDato(Extra e)
         {
-            this.nombre = nombre;
-            this.precio = precio;
+            this.nombre = e.Nombre;
+            this.precio = e.Precio;
         }
         public string Nombre
         {

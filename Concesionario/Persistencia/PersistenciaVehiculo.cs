@@ -34,5 +34,30 @@ namespace PersVehiculo
         {
             BD.DELETEVehiculo(new VehiculoDato(v));
         }
+        
+        public static void AñadirExtra(Vehiculo v, Extra e)
+        {
+            BD.INSERTExtra(new VehiculoDato(v), new ExtraDato(e));
+        }
+        public static Extra BuscarExtra(string nombre)
+        {
+            if (BD.SELECTExtra(nombre) != null)
+            {
+                ExtraDato dato = BD.SELECTExtra(nombre);
+                return new Extra(dato.Nombre, dato.Precio);
+            }
+            else
+            {
+                return null;
+            }
+        }
+        public static void ModificarExtra(Extra e)
+        {
+            BD.UPDATEExtra(new ExtraDato(e));
+        }
+        public static void EliminarExtra(Vehiculo v, Extra e)
+        {
+            BD.DELETEExtra(new VehiculoDato(v), new ExtraDato(e));
+        }
     }
 }

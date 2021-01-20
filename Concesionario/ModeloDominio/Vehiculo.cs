@@ -112,7 +112,7 @@ namespace MDVehiculo
         private string nombre;
         private double precio;
 
-        Extra(string nombre, double precio)
+        public Extra(string nombre, double precio)
         {
             this.nombre = nombre;
             this.precio = precio;
