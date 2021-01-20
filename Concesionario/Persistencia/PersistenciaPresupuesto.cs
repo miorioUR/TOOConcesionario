@@ -19,7 +19,7 @@ namespace PersPresupuestos
         }
         public static Presupuesto Buscar(string id)
         {
-            if(BD.SELECTPresupuesto(id) != null)
+            if (BD.SELECTPresupuesto(id) != null)
             {
                 PresupuestoDato dato = BD.SELECTPresupuesto(id);
                 return new Presupuesto(dato.Id, Utilidades.Conversores.CambioAEmpleado(dato.Empleado), Utilidades.Conversores.CambioACliente(dato.Cliente), Utilidades.Conversores.CambioAListaValoracion(dato.ListaValoraciones));
@@ -38,5 +38,13 @@ namespace PersPresupuestos
             BD.DELETEPresupuesto(new PresupuestoDato(p));
         }
 
+        public static void AñadirValoracion(Presupuesto p, Valoracion v)
+        {
+            BD.INSERTValoracion(new PresupuestoDato(p), new ValoracionDato(v));
+        }
+        public static Presupuesto BuscarValoracion(string id)
+        {
+
+        }
     }
 }

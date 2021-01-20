@@ -398,11 +398,11 @@ namespace BaseDatos
         private double precio;
         private bool aceptado;
 
-        public ValoracionDato(VehiculoDato v, double p)
+        public ValoracionDato(Valoracion v)
         {
-            this.vehiculo = v;
-            this.precio = p;
-            this.aceptado = false;
+            this.vehiculo = Utilidades.Conversores.CambioAVehiculoDato(v.Vehiculo);
+            this.precio = v.Precio;
+            this.aceptado = v.Aceptado;
         }
         public VehiculoDato Vehiculo
         {

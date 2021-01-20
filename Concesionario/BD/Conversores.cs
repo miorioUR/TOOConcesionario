@@ -63,5 +63,9 @@ namespace Utilidades
         {
             return new Cliente(c.Dni, c.Nombre, c.Telefono, CambioACategoria(c.Valor));
         }
+        public static VehiculoDato CambioAVehiculoDato(Vehiculo v)
+        {
+            return new VehiculoDato(v);
+        }
     }
 }
