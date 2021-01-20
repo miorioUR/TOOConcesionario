@@ -20,11 +20,11 @@ namespace PersCliente
 
         //Pre: c != null. 
         //Post: Si c existe lo busca y lo devuelve, en otro caso no hace nada y devuelve null.
-        public static Cliente Buscar(Cliente c)
+        public static Cliente Buscar(string dni)
         {
-            if (BD.SELECTCliente(new ClienteDato(c.Dni)) != null)
+            if (BD.SELECTCliente(dni) != null)
             {
-                ClienteDato dato = BD.SELECTCliente(new ClienteDato(c.Dni));
+                ClienteDato dato = BD.SELECTCliente(dni);
                 return new Cliente(dato.Dni, dato.Nombre, dato.Telefono, Conversores.CambioACategoria(dato.Valor));
             }
             else

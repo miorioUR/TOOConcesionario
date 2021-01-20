@@ -14,11 +14,11 @@ namespace PersVehiculo
         {
             BD.INSERTVehiculo(new VehiculoDato(v)); //requiere constructor de vehiculodato en publico, al igual que el de vehiculo en la linea 22.solucion?
         }
-        public static Vehiculo Buscar(Vehiculo v)
+        public static Vehiculo Buscar(string id)
         {
-            if(BD.SELECTVehiculo(new VehiculoDato(v)) != null)
+            if(BD.SELECTVehiculo(id)!=null)
             {
-                VehiculoDato dato = BD.SELECTVehiculo(new VehiculoDato(v));
+                VehiculoDato dato = BD.SELECTVehiculo(id);
                 return new Vehiculo(dato.NumBastidor,dato.Marca,dato.Modelo,dato.Potencia,dato.Precio);
             }
             else

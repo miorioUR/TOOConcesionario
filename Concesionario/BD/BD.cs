@@ -64,9 +64,9 @@ namespace BaseDatos
             BD.clientes.Add(c);
         }
 
-        public static ClienteDato SELECTCliente(ClienteDato c)
+        public static ClienteDato SELECTCliente(string dni)
         {
-            return BD.clientes[c.Dni];
+            return BD.clientes[dni];
         }
 
         public static void UPDATECliente(ClienteDato c)
@@ -84,9 +84,9 @@ namespace BaseDatos
         {
             vehiculos.Add(v);
         }
-        public static VehiculoDato SELECTVehiculo(VehiculoDato v)
+        public static VehiculoDato SELECTVehiculo(string numBastidor)
         {
-            return vehiculos[v.NumBastidor];
+            return vehiculos[numBastidor];
         }
         public static void UPDATEVehiculo(VehiculoDato v)
         {
@@ -102,13 +102,12 @@ namespace BaseDatos
             vehiculos[v.NumBastidor].ListaExtras.Add(e);
             extras.Add(e);
         }
-        public static ExtraDato SELECTExtra(ExtraDato e)
+        public static ExtraDato SELECTExtra(string nombre)
         {
-            return extras[e.Nombre];
+            return extras[nombre];
         }
         public static void UPDATEExtra(ExtraDato e)
         {
-
             extras.Remove(e.Nombre);
             extras.Add(e);
         }
@@ -131,7 +130,7 @@ namespace BaseDatos
             presupuestos.Remove(p.Id);
             presupuestos.Add(p);
         }
-        public static PresupuestoDato SELECTPresupuesto(PresupuestoDato p)
+        public static PresupuestoDato SELECTPresupuesto(string id)
         {
             return presupuestos[p.id];
         }
@@ -361,7 +360,7 @@ namespace BaseDatos
             this.fecha = DateTime.Now;
             this.empleado = new EmpleadoDato(p.Empleado.Dni,p.Empleado.Nombre);
             this.cliente = new ClienteDato(p.Cliente);
-            this.listaValoraciones = Conversores.CambioAListaValoracionDato(p.ListaValoraciones); 
+            this.listaValoraciones = Utilidades.Conversores.CambioAListaValoracionDato(p.ListaValoraciones); 
             this.estado = EstadoDato.propuesto;
         }
         public string Id

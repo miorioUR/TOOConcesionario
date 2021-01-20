@@ -9,8 +9,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LogicaNegocio", "LNCliente\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Persistencia", "Persistencia\Persistencia.csproj", "{4B50FF9A-A254-40D7-BCEE-91F7E6DA3A03}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Utilidades", "Utilidades\Utilidades.csproj", "{3A0D2ADA-8081-4239-89D9-903D1233C350}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ModeloDominio", "ModeloDominio\ModeloDominio.csproj", "{F0D0BAD9-D25F-4B27-953B-1995D695969B}"
 EndProject
 Global
@@ -31,10 +29,6 @@ Global
 		{4B50FF9A-A254-40D7-BCEE-91F7E6DA3A03}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4B50FF9A-A254-40D7-BCEE-91F7E6DA3A03}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4B50FF9A-A254-40D7-BCEE-91F7E6DA3A03}.Release|Any CPU.Build.0 = Release|Any CPU
-		{3A0D2ADA-8081-4239-89D9-903D1233C350}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{3A0D2ADA-8081-4239-89D9-903D1233C350}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{3A0D2ADA-8081-4239-89D9-903D1233C350}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{3A0D2ADA-8081-4239-89D9-903D1233C350}.Release|Any CPU.Build.0 = Release|Any CPU
 		{F0D0BAD9-D25F-4B27-953B-1995D695969B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{F0D0BAD9-D25F-4B27-953B-1995D695969B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F0D0BAD9-D25F-4B27-953B-1995D695969B}.Release|Any CPU.ActiveCfg = Release|Any CPU

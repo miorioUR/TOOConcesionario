@@ -17,12 +17,12 @@ namespace PersPresupuestos
         {
             BD.INSERTPresupuesto(new PresupuestoDato(p));
         }
-        public static Presupuesto Buscar(Presupuesto p)
+        public static Presupuesto Buscar(string id)
         {
-            if(BD.SELECTPresupuesto(new PresupuestoDato(p)) != null)
+            if(BD.SELECTPresupuesto(id) != null)
             {
-                PresupuestoDato dato = BD.SELECTPresupuesto(new PresupuestoDato(p));
-                return new Presupuesto(dato.Id, PersistenciaPresupuesto.CambioAEmpleado(dato.Empleado), PersistenciaPresupuesto.CambioACliente(dato.Cliente), dato.ListaValoraciones);
+                PresupuestoDato dato = BD.SELECTPresupuesto(id);
+                return new Presupuesto(dato.Id, Utilidades.Conversores.CambioAEmpleado(dato.Empleado), Utilidades.Conversores.CambioACliente(dato.Cliente), Utilidades.Conversores.CambioAListaValoracion(dato.ListaValoraciones));
             }
             else
             {
@@ -37,13 +37,6 @@ namespace PersPresupuestos
         {
             BD.DELETEPresupuesto(new PresupuestoDato(p));
         }
-        public static Empleado CambioAEmpleado(EmpleadoDato e)
-        {
-            return new Empleado(e.Dni,e.Nombre);
-        }
-        public static Cliente CambioACliente(ClienteDato c)
-        {
-            return new Cliente(c.Dni,c.Nombre,c.Telefono,PersistenciaCliente.CambioACategoria(c.Valor));
-        }
+
     }
 }
