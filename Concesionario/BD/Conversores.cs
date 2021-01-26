@@ -40,9 +40,9 @@ namespace Utilidades
         public static List<ValoracionDato> CambioAListaValoracionDato(List<Valoracion> lv)
         {
             List<ValoracionDato> lvd = new List<ValoracionDato>();
-            foreach(Valoracion v in lv)
+            foreach (Valoracion v in lv)
             {
-                lvd.Add(new ValoracionDato(new VehiculoDato(v.Vehiculo),v.Precio));
+                lvd.Add(new ValoracionDato(v));
             }
             return lvd;
         }
@@ -51,7 +51,7 @@ namespace Utilidades
             List<Valoracion> lv = new List<Valoracion>();
             foreach (Valoracion v in lv)
             {
-                lv.Add(new Valoracion(new Vehiculo(v.Vehiculo.NumBastidor,v.Vehiculo.Marca,v.Vehiculo.Modelo,v.Vehiculo.Potencia,v.Vehiculo.Precio), v.Precio));
+                lv.Add(new Valoracion(new Vehiculo(v.Vehiculo.NumBastidor, v.Vehiculo.Marca, v.Vehiculo.Modelo, v.Vehiculo.Potencia, v.Vehiculo.Precio), v.Precio));
             }
             return lv;
         }
@@ -66,6 +66,14 @@ namespace Utilidades
         public static VehiculoDato CambioAVehiculoDato(Vehiculo v)
         {
             return new VehiculoDato(v);
+        }
+        public static Vehiculo CambioAVehiculo(VehiculoDato vd)
+        {
+            return new Vehiculo(vd.NumBastidor, vd.Marca, vd.Modelo, vd.Potencia, vd.Precio);
+        }
+        public static ValoracionDato CambioAValoracionDato(Valoracion v)
+        {
+            return new ValoracionDato(v);
         }
     }
 }

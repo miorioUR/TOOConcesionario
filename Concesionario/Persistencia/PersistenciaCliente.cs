@@ -12,14 +12,14 @@ namespace PersCliente
     public class PersistenciaCliente
     {
         //Pre: c != null. c no existe.   
-        //Post: Añade c
+        //Post: Añade c a la tabla de clientes de la BD
         public static void Añadir(Cliente c)
         {
             BD.INSERTCliente(new ClienteDato(c.Dni, c.Nombre, c.Telefono, Conversores.CambioACategoriaDato(c.Valor)));
         }
 
-        //Pre: c != null. 
-        //Post: Si c existe lo busca y lo devuelve, en otro caso no hace nada y devuelve null.
+        //Pre: dni es una string con formato valido. 
+        //Post: Si el cliente con dni existe lo busca y lo devuelve, en otro caso no hace nada y devuelve null.
         public static Cliente Buscar(string dni)
         {
             if (BD.SELECTCliente(dni) != null)
@@ -33,7 +33,7 @@ namespace PersCliente
             }
         }
 
-        //Pre: c != null. c no existe.  
+        //Pre: c != null. c existe.  
         //Post: Modifica c.
         public static void Modificar(Cliente c)
         {
@@ -48,3 +48,4 @@ namespace PersCliente
         }
     }
 }
+

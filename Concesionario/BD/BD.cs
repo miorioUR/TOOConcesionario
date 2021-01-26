@@ -53,7 +53,7 @@ namespace BaseDatos
         {
             get
             {
-                if(extras == null)
+                if (extras == null)
                     extras = new TablaExtras();
                 return extras;
             }
@@ -97,7 +97,7 @@ namespace BaseDatos
         {
             return vehiculos.Remove(v);
         }
-        public static void INSERTExtra(VehiculoDato v,ExtraDato e)
+        public static void INSERTExtra(VehiculoDato v, ExtraDato e)
         {
             vehiculos[v.NumBastidor].ListaExtras.Add(e);
             extras.Add(e);
@@ -132,15 +132,15 @@ namespace BaseDatos
         }
         public static PresupuestoDato SELECTPresupuesto(string id)
         {
-            return presupuestos[p.id];
+            return presupuestos[id];
         }
         public static void INSERTValoracion(PresupuestoDato p, ValoracionDato v)
         {
             presupuestos[p.id].ListaValoraciones.Add(v);
         }
-        public static ValoracionDato SELECTValoracion(PresupuestoDato p,string id)
+        public static ValoracionDato SELECTValoracion(PresupuestoDato p, string id)
         {
-            foreach(ValoracionDato vd in presupuestos[p.id].ListaValoraciones)
+            foreach (ValoracionDato vd in presupuestos[p.id].ListaValoraciones)
             {
                 if (vd.Vehiculo.NumBastidor.Equals(id))
                 {
@@ -149,9 +149,10 @@ namespace BaseDatos
             }
             return null;
         }
-        public static void UPDATEValoracion(PresupuestoDato p,ValoracionDato v)
+        public static void UPDATEValoracion(PresupuestoDato p, ValoracionDato v)
         {
-            foreach(ValoracionDato vd in p.ListaValoraciones){
+            foreach (ValoracionDato vd in p.ListaValoraciones)
+            {
                 if (vd.Vehiculo.Equals(v.Vehiculo))
                 {
                     presupuestos[p.Id].ListaValoraciones.Remove(vd);
@@ -204,9 +205,9 @@ namespace BaseDatos
         public ClienteDato(Cliente c)
         {
             this.dni = c.Dni;
-            this.nombre = c.Nombre;  
+            this.nombre = c.Nombre;
             this.telefono = c.Telefono;
-            this.valor = (CategoriaDato) c.Valor; //Es esto correcto?
+            this.valor = (CategoriaDato)c.Valor; //Es esto correcto?
         }
         public ClienteDato(string dni, string nombre, string telefono, CategoriaDato valor)
         {
@@ -257,7 +258,7 @@ namespace BaseDatos
 
         private List<ExtraDato> listaExtras;
 
-        public VehiculoDato(Vehiculo v) 
+        public VehiculoDato(Vehiculo v)
         {
             this.numBastidor = v.NumBastidor;
             this.marca = v.Marca;
@@ -310,7 +311,7 @@ namespace BaseDatos
         private DateTime fechaMatriculacion;
         private const double IVA = 0.21;
 
-        protected VehiculoSegundaManoDato(Vehiculo v, string matr,DateTime fMatr) : base(v)
+        protected VehiculoSegundaManoDato(Vehiculo v, string matr, DateTime fMatr) : base(v)
         {
             this.matricula = matr;
             this.fechaMatriculacion = fMatr;
@@ -321,7 +322,7 @@ namespace BaseDatos
         }
         public DateTime FechaMatriculacion
         {
-            get{ return fechaMatriculacion; }
+            get { return fechaMatriculacion; }
         }
     }
     public class ExtraDato
@@ -336,11 +337,11 @@ namespace BaseDatos
         }
         public string Nombre
         {
-            get{ return nombre; }
+            get { return nombre; }
         }
         public double Precio
         {
-            get{ return precio; }
+            get { return precio; }
         }
     }
     //CLASES PRESUPUESTOS
@@ -358,9 +359,9 @@ namespace BaseDatos
         {
             this.id = p.Id;
             this.fecha = DateTime.Now;
-            this.empleado = new EmpleadoDato(p.Empleado.Dni,p.Empleado.Nombre);
+            this.empleado = new EmpleadoDato(p.Empleado.Dni, p.Empleado.Nombre);
             this.cliente = new ClienteDato(p.Cliente);
-            this.listaValoraciones = Utilidades.Conversores.CambioAListaValoracionDato(p.ListaValoraciones); 
+            this.listaValoraciones = Utilidades.Conversores.CambioAListaValoracionDato(p.ListaValoraciones);
             this.estado = EstadoDato.propuesto;
         }
         public string Id
