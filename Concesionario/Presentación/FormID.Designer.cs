@@ -59,6 +59,7 @@ namespace Presentación
             this.btAceptar.TabIndex = 2;
             this.btAceptar.Text = "Aceptar";
             this.btAceptar.UseVisualStyleBackColor = true;
+            this.btAceptar.Click += new System.EventHandler(this.btAceptar_Click);
             // 
             // btCancelar
             // 

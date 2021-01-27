@@ -19,37 +19,37 @@ namespace Presentación
 
         private void TSMIAltaC_Click(object sender, EventArgs e)
         {
-            Form f = new FormID(0);
+            Form f = new FormID(0,0);
             f.ShowDialog();
         }
 
         private void TSMIBajaC_Click(object sender, EventArgs e)
         {
-            Form f = new FormID(0);
+            Form f = new FormID(0,1);
             f.ShowDialog();
         }
 
         private void TSMIBusquedaC_Click(object sender, EventArgs e)
         {
-            Form f = new FormID(0);
+            Form f = new FormID(0,2);
             f.ShowDialog();
         }
 
         private void TSMIAltaV_Click(object sender, EventArgs e)
         {
-            Form f = new FormID(1);
+            Form f = new FormID(1,0);
             f.ShowDialog();
         }
 
         private void TSMIBajaV_Click(object sender, EventArgs e)
         {
-            Form f = new FormID(1);
+            Form f = new FormID(1,1);
             f.ShowDialog();
         }
 
         private void TSMIBusquedaV_Click(object sender, EventArgs e)
         {
-            Form f = new FormID(1);
+            Form f = new FormID(1,2);
             f.ShowDialog();
         }
     }
