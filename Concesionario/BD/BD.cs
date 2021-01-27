@@ -18,6 +18,7 @@ namespace BaseDatos
         private static TablaPresupuestos presupuestos;
         //private static TablaValoraciones valoraciones;
         private static TablaExtras extras;
+        private static TablaSegundaMano vehiculosSegundaMano;
         //CONSTRUCTOR------------------------
         private BD() { }
         //MODIFICACIONES DE TABLAS----------------------------
@@ -116,6 +117,25 @@ namespace BaseDatos
             vehiculos[v.NumBastidor].ListaExtras.Remove(e);
             extras.Remove(e);
         }
+        public static void INSERTVehiculoSegundaMano(VehiculoSegundaManoDato v)
+        {
+            vehiculosSegundaMano.Add(v);
+            vehiculos.Add(new VehiculoDato(new Vehiculo(v.NumBastidor, v.Marca, v.Modelo, v.Potencia, v.Precio)));
+        }
+        public static VehiculoSegundaManoDato SELECTVehiculoSegundaMano(string id)
+        {
+            return vehiculosSegundaMano[id];
+        }
+        public static void UPDATEVehiculoSegundaMano(VehiculoSegundaManoDato v)
+        {
+            vehiculosSegundaMano.Remove(v.NumBastidor);
+            vehiculos.Add(v);
+        }
+        public static void DELETEVehiculoSegundaMano(VehiculoSegundaManoDato v)
+        {
+            vehiculosSegundaMano.Remove(v);
+            vehiculos.Remove(v.NumBastidor);
+        }
         //METODOS PRESUPUESTOS ----------------------------------------
         public static void INSERTPresupuesto(PresupuestoDato p)
         {
@@ -192,6 +212,13 @@ namespace BaseDatos
         protected override string GetKeyForItem(ExtraDato e)
         {
             return e.Nombre;
+        }
+    }
+    public class TablaSegundaMano : KeyedCollection<string, VehiculoSegundaManoDato>
+    {
+        protected override string GetKeyForItem(VehiculoSegundaManoDato item)
+        {
+            return item.NumBastidor;
         }
     }
     //CLASES CLIENTE ----------------------------------------------
@@ -311,7 +338,7 @@ namespace BaseDatos
         private DateTime fechaMatriculacion;
         private const double IVA = 0.21;
 
-        protected VehiculoSegundaManoDato(Vehiculo v, string matr, DateTime fMatr) : base(v)
+        public VehiculoSegundaManoDato(Vehiculo v, string matr, DateTime fMatr) : base(v)
         {
             this.matricula = matr;
             this.fechaMatriculacion = fMatr;

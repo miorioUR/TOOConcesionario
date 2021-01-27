@@ -86,7 +86,7 @@ namespace MDVehiculo
         private DateTime fechaMatriculacion;
         private const double IVA = 0.21;
 
-        protected VehiculoSegundaMano(string numBastidor, string marca, string modelo, int potencia, double preciobase, string matricula, DateTime fechaMatricula) : base(numBastidor, marca, modelo, potencia, preciobase)
+        public VehiculoSegundaMano(string numBastidor, string marca, string modelo, int potencia, double preciobase, string matricula, DateTime fechaMatricula) : base(numBastidor, marca, modelo, potencia, preciobase)
         {
             base.Iva = IVA;
             this.matricula = matricula;
