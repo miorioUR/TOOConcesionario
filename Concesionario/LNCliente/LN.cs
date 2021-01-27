@@ -79,6 +79,22 @@ namespace LogicaNegocio
         {
             PersistenciaVehiculo.ModificarExtra(e);
         }
+        public void AltaVehiculoSegundaMano(VehiculoSegundaMano v)
+        {
+            PersistenciaVehiculo.AñadirVehiculoSegundaMano(v);
+        }
+        public bool ExisteVehiculoSegundaMano(VehiculoSegundaMano v)
+        {
+            return PersistenciaVehiculo.BuscarVehiculoSegundaMano(v.NumBastidor) != null;
+        }
+        public void BajaVehiculoSegundaMano(VehiculoSegundaMano v)
+        {
+            PersistenciaVehiculo.EliminarVehiculoSegundaMano(v);
+        }
+        public void ModificarVehiculoSegundaMano(VehiculoSegundaMano v)
+        {
+            PersistenciaVehiculo.ModificarVehiculoSegundaMano(v);
+        }
     }
     public class LNPresupuesto
     {

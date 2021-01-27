@@ -74,5 +74,37 @@ namespace PersVehiculo
         {
             BD.DELETEExtra(BD.SELECTVehiculo(v.NumBastidor), BD.SELECTExtra(e.Nombre));
         }
+        //Pre: v!=null, v ya creado
+        //Post: Añade un vehiculoSegundaMano v a la luista de vehiculosSegundaMano y un vehiculo correspondiente a sus datos a la lista de vehiculos
+        public static void AñadirVehiculoSegundaMano(VehiculoSegundaMano v)
+        {
+            BD.INSERTVehiculoSegundaMano(new VehiculoSegundaManoDato(new Vehiculo(v.NumBastidor, v.Marca, v.Modelo, v.Potencia, v.Precio), v.Matricula, v.FechaMatriculacion));
+        }
+        //Pre: id con formato válido para un numero de bastidor de vehiculo
+        //Post: devuelve un vehiculoSegundaMano con el numBastidor introducido, en caso de que no exista devuelve null
+        public static VehiculoSegundaMano BuscarVehiculoSegundaMano(string id)
+        {
+            if (BD.SELECTVehiculoSegundaMano(id) != null)
+            {
+                VehiculoSegundaManoDato dato = BD.SELECTVehiculoSegundaMano(id);
+                return new VehiculoSegundaMano(dato.NumBastidor, dato.Marca, dato.Modelo, dato.Potencia, dato.Precio, dato.Matricula, dato.FechaMatriculacion);
+            }
+            else
+            {
+                return null;
+            }
+        }
+        //Pre: v != null. v existente en la BD.  
+        //Post: Permite modificar todos los valores de v excepto numBastidor.
+        public static void ModificarVehiculoSegundaMano(VehiculoSegundaMano v)
+        {
+            BD.UPDATEVehiculoSegundaMano(BD.SELECTVehiculoSegundaMano(v.NumBastidor));
+        }
+        //Pre: v!=null, v existente tanto en tablaSegundaMano como en TablaVehiculo
+        //Post: Elimina el vehiculoSegundaMano v de ambas tablas
+        public static void EliminarVehiculoSegundaMano(VehiculoSegundaMano v)
+        {
+            BD.DELETEVehiculoSegundaMano(BD.SELECTVehiculoSegundaMano(v.NumBastidor));
+        }
     }
 }
