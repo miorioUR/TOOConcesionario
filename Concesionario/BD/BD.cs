@@ -37,19 +37,24 @@ namespace BaseDatos
         {
             get
             {
-                if (vehiculos == null) vehiculos = new TablaVehiculo();
+                if (vehiculos == null)
+                {
+                    vehiculos = new TablaVehiculo();
+                }
                 return vehiculos;
             }
         }
-        public static TablaPresupuestos Presupuestos
+
+        public static TablaSegundaMano VehiculosSegundaMano
         {
             get
             {
-                if (presupuestos == null)
-                    presupuestos = new TablaPresupuestos();
-                return presupuestos;
+                if (vehiculosSegundaMano == null)
+                    vehiculosSegundaMano = new TablaSegundaMano();
+                return vehiculosSegundaMano;
             }
         }
+
         public static TablaExtras Extras
         {
             get
@@ -59,108 +64,142 @@ namespace BaseDatos
                 return extras;
             }
         }
+
+        public static TablaPresupuestos Presupuestos
+        {
+            get
+            {
+                if (presupuestos == null)
+                    presupuestos = new TablaPresupuestos();
+                return presupuestos;
+            }
+        }
+        
         //METODOS CLIENTE------------------------------
         public static void INSERTCliente(ClienteDato c)
         {
-            BD.clientes.Add(c);
+            Clientes.Add(c);
         }
 
         public static ClienteDato SELECTCliente(string dni)
         {
-            return BD.clientes[dni];
+            return Clientes[dni];
         }
 
         public static void UPDATECliente(ClienteDato c)
         {
-            BD.clientes.Remove(c.Dni);
-            BD.clientes.Add(c);
+            Clientes.Remove(c.Dni);
+            Clientes.Add(c);
         }
 
         public static void DELETECliente(ClienteDato c)
         {
-            BD.clientes.Remove(c.Dni);
+            Clientes.Remove(c.Dni);
         }
         //METODOS VEHICULO-----------------------------
         public static void INSERTVehiculo(VehiculoDato v)
         {
-            vehiculos.Add(v);
+            Vehiculos.Add(v);
         }
         public static VehiculoDato SELECTVehiculo(string numBastidor)
         {
-            return vehiculos[numBastidor];
+            return Vehiculos[numBastidor];
+        }
+        public static bool CONTAINSVehiculo(string n)
+        {
+            if (Vehiculos.Contains(n))
+                return true;
+            else
+                return false;
         }
         public static void UPDATEVehiculo(VehiculoDato v)
         {
-            vehiculos.Remove(v.NumBastidor);
-            vehiculos.Add(v);
+            Vehiculos.Remove(v.NumBastidor);
+            Vehiculos.Add(v);
         }
         public static bool DELETEVehiculo(VehiculoDato v)
         {
-            return vehiculos.Remove(v);
+            return Vehiculos.Remove(v);
+        }
+        public static List<VehiculoDato> SELECTAllVehiculo()
+        {
+            List<VehiculoDato> lv = new List<VehiculoDato>();
+            foreach (VehiculoDato v in Vehiculos)
+            {
+                lv.Add(v);
+            }
+            return lv;
         }
         public static void INSERTExtra(VehiculoDato v, ExtraDato e)
         {
-            vehiculos[v.NumBastidor].ListaExtras.Add(e);
-            extras.Add(e);
+            Vehiculos[v.NumBastidor].ListaExtras.Add(e);
+            Extras.Add(e);
         }
         public static ExtraDato SELECTExtra(string nombre)
         {
-            return extras[nombre];
+            return Extras[nombre];
         }
         public static void UPDATEExtra(ExtraDato e)
         {
-            extras.Remove(e.Nombre);
-            extras.Add(e);
+            Extras.Remove(e.Nombre);
+            Extras.Add(e);
         }
         public static void DELETEExtra(VehiculoDato v, ExtraDato e)
         {
-            vehiculos[v.NumBastidor].ListaExtras.Remove(e);
-            extras.Remove(e);
+            Vehiculos[v.NumBastidor].ListaExtras.Remove(e);
+            Extras.Remove(e);
         }
         public static void INSERTVehiculoSegundaMano(VehiculoSegundaManoDato v)
         {
-            vehiculosSegundaMano.Add(v);
-            vehiculos.Add(new VehiculoDato(new Vehiculo(v.NumBastidor, v.Marca, v.Modelo, v.Potencia, v.Precio)));
+            VehiculosSegundaMano.Add(v);
+            Vehiculos.Add(new VehiculoDato(new Vehiculo(v.NumBastidor, v.Marca, v.Modelo, v.Potencia, v.Precio)));
         }
-        public static VehiculoSegundaManoDato SELECTVehiculoSegundaMano(string id)
+        public static VehiculoSegundaManoDato SELECTVehiculoSegundaMano(string numBastidor)
         {
-            return vehiculosSegundaMano[id];
+            return VehiculosSegundaMano[numBastidor];
         }
         public static void UPDATEVehiculoSegundaMano(VehiculoSegundaManoDato v)
         {
-            vehiculosSegundaMano.Remove(v.NumBastidor);
-            vehiculos.Add(v);
+            VehiculosSegundaMano.Remove(v.NumBastidor);
+            Vehiculos.Add(v);
         }
         public static void DELETEVehiculoSegundaMano(VehiculoSegundaManoDato v)
         {
-            vehiculosSegundaMano.Remove(v);
-            vehiculos.Remove(v.NumBastidor);
+            VehiculosSegundaMano.Remove(v);
+            Vehiculos.Remove(v.NumBastidor);
+        }
+        public static bool CONTAINSVehiculoSegundaMano(string n)
+        {
+            if (VehiculosSegundaMano.Contains(n))
+                return true;
+            else
+                return false;
         }
         //METODOS PRESUPUESTOS ----------------------------------------
         public static void INSERTPresupuesto(PresupuestoDato p)
         {
-            presupuestos.Add(p);
+            Presupuestos.Add(p);
         }
         public static bool DELETEPresupuesto(PresupuestoDato p)
         {
-            return presupuestos.Remove(p);
+            return Presupuestos.Remove(p);
         }
         public static void UPDATEPresupuesto(PresupuestoDato p)
         {
-            presupuestos.Remove(p.Id);
-            presupuestos.Add(p);
+            Presupuestos.Remove(p.Id);
+            Presupuestos.Add(p);
         }
         public static PresupuestoDato SELECTPresupuesto(string id)
         {
-            return presupuestos[id];
+            return Presupuestos[id];
         }
         public static void INSERTValoracion(PresupuestoDato p, ValoracionDato v)
         {
-            presupuestos[p.id].ListaValoraciones.Add(v);
+            Presupuestos[p.id].ListaValoraciones.Add(v);
         }
         public static ValoracionDato SELECTValoracion(PresupuestoDato p, string id)
         {
-            foreach (ValoracionDato vd in presupuestos[p.id].ListaValoraciones)
+            foreach (ValoracionDato vd in Presupuestos[p.id].ListaValoraciones)
             {
                 if (vd.Vehiculo.NumBastidor.Equals(id))
                 {
@@ -175,14 +214,14 @@ namespace BaseDatos
             {
                 if (vd.Vehiculo.Equals(v.Vehiculo))
                 {
-                    presupuestos[p.Id].ListaValoraciones.Remove(vd);
+                    Presupuestos[p.Id].ListaValoraciones.Remove(vd);
                 }
             }
-            presupuestos[p.Id].ListaValoraciones.Add(v);
+            Presupuestos[p.Id].ListaValoraciones.Add(v);
         }
         public static void DELETEValoracion(PresupuestoDato p, ValoracionDato v)
         {
-            presupuestos[p.Id].ListaValoraciones.Remove(v);
+            Presupuestos[p.Id].ListaValoraciones.Remove(v);
         }
     }
     //ASIGNACION DE KEYS ------------------------------------

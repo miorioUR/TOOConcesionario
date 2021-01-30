@@ -38,6 +38,8 @@ namespace Presentación
             this.TSMIAltaV = new System.Windows.Forms.ToolStripMenuItem();
             this.TSMIBajaV = new System.Windows.Forms.ToolStripMenuItem();
             this.TSMIBusquedaV = new System.Windows.Forms.ToolStripMenuItem();
+            this.TSMIRecorridoUnoAUnoV = new System.Windows.Forms.ToolStripMenuItem();
+            this.TSMIListadoV = new System.Windows.Forms.ToolStripMenuItem();
             this.TSMIPresupuestos = new System.Windows.Forms.ToolStripMenuItem();
             this.TSMIConfiguracion = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
@@ -69,21 +71,21 @@ namespace Presentación
             // TSMIAltaC
             // 
             this.TSMIAltaC.Name = "TSMIAltaC";
-            this.TSMIAltaC.Size = new System.Drawing.Size(180, 22);
+            this.TSMIAltaC.Size = new System.Drawing.Size(126, 22);
             this.TSMIAltaC.Text = "Alta";
             this.TSMIAltaC.Click += new System.EventHandler(this.TSMIAltaC_Click);
             // 
             // TSMIBajaC
             // 
             this.TSMIBajaC.Name = "TSMIBajaC";
-            this.TSMIBajaC.Size = new System.Drawing.Size(180, 22);
+            this.TSMIBajaC.Size = new System.Drawing.Size(126, 22);
             this.TSMIBajaC.Text = "Baja";
             this.TSMIBajaC.Click += new System.EventHandler(this.TSMIBajaC_Click);
             // 
             // TSMIBusquedaC
             // 
             this.TSMIBusquedaC.Name = "TSMIBusquedaC";
-            this.TSMIBusquedaC.Size = new System.Drawing.Size(180, 22);
+            this.TSMIBusquedaC.Size = new System.Drawing.Size(126, 22);
             this.TSMIBusquedaC.Text = "Búsqueda";
             this.TSMIBusquedaC.Click += new System.EventHandler(this.TSMIBusquedaC_Click);
             // 
@@ -92,31 +94,47 @@ namespace Presentación
             this.TSMIVehiculos.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.TSMIAltaV,
             this.TSMIBajaV,
-            this.TSMIBusquedaV});
+            this.TSMIBusquedaV,
+            this.TSMIRecorridoUnoAUnoV,
+            this.TSMIListadoV});
             this.TSMIVehiculos.Name = "TSMIVehiculos";
-            this.TSMIVehiculos.Size = new System.Drawing.Size(69, 20);
+            this.TSMIVehiculos.Size = new System.Drawing.Size(70, 20);
             this.TSMIVehiculos.Text = "Vehículos";
             // 
             // TSMIAltaV
             // 
             this.TSMIAltaV.Name = "TSMIAltaV";
-            this.TSMIAltaV.Size = new System.Drawing.Size(180, 22);
+            this.TSMIAltaV.Size = new System.Drawing.Size(182, 22);
             this.TSMIAltaV.Text = "Alta";
             this.TSMIAltaV.Click += new System.EventHandler(this.TSMIAltaV_Click);
             // 
             // TSMIBajaV
             // 
             this.TSMIBajaV.Name = "TSMIBajaV";
-            this.TSMIBajaV.Size = new System.Drawing.Size(180, 22);
+            this.TSMIBajaV.Size = new System.Drawing.Size(182, 22);
             this.TSMIBajaV.Text = "Baja";
             this.TSMIBajaV.Click += new System.EventHandler(this.TSMIBajaV_Click);
             // 
             // TSMIBusquedaV
             // 
             this.TSMIBusquedaV.Name = "TSMIBusquedaV";
-            this.TSMIBusquedaV.Size = new System.Drawing.Size(180, 22);
+            this.TSMIBusquedaV.Size = new System.Drawing.Size(182, 22);
             this.TSMIBusquedaV.Text = "Búsqueda";
             this.TSMIBusquedaV.Click += new System.EventHandler(this.TSMIBusquedaV_Click);
+            // 
+            // TSMIRecorridoUnoAUnoV
+            // 
+            this.TSMIRecorridoUnoAUnoV.Name = "TSMIRecorridoUnoAUnoV";
+            this.TSMIRecorridoUnoAUnoV.Size = new System.Drawing.Size(182, 22);
+            this.TSMIRecorridoUnoAUnoV.Text = "Recorrido uno a uno";
+            this.TSMIRecorridoUnoAUnoV.Click += new System.EventHandler(this.TSMIRecorridoUnoAUnoV_Click);
+            // 
+            // TSMIListadoV
+            // 
+            this.TSMIListadoV.Name = "TSMIListadoV";
+            this.TSMIListadoV.Size = new System.Drawing.Size(182, 22);
+            this.TSMIListadoV.Text = "Listado";
+            this.TSMIListadoV.Click += new System.EventHandler(this.TSMIListadoV_Click);
             // 
             // TSMIPresupuestos
             // 
@@ -160,6 +178,8 @@ namespace Presentación
         private System.Windows.Forms.ToolStripMenuItem TSMIBusquedaV;
         private System.Windows.Forms.ToolStripMenuItem TSMIPresupuestos;
         private System.Windows.Forms.ToolStripMenuItem TSMIConfiguracion;
+        private System.Windows.Forms.ToolStripMenuItem TSMIRecorridoUnoAUnoV;
+        private System.Windows.Forms.ToolStripMenuItem TSMIListadoV;
     }
 }
 

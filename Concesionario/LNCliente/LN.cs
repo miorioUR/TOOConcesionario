@@ -15,7 +15,7 @@ namespace LogicaNegocio
     public class LNCliente
     {
         Empleado e;
-        internal LNCliente(Empleado emp)
+        public LNCliente(Empleado emp)
         {
             this.e = emp;
         }
@@ -41,7 +41,7 @@ namespace LogicaNegocio
     public class LNVehiculo
     {
         Empleado e;
-        internal LNVehiculo(Empleado emp)
+        public LNVehiculo(Empleado emp)
         {
             this.e = emp;
         }
@@ -51,9 +51,9 @@ namespace LogicaNegocio
         {
             PersistenciaVehiculo.Añadir(v);
         }
-        public bool ExisteVehiculo(Vehiculo v)
+        public bool ExisteVehiculo(string numBastidor)
         {
-            return PersistenciaVehiculo.Buscar(v.NumBastidor) != null;
+            return PersistenciaVehiculo.Existe(numBastidor);
         }
         public void BajaVehiculo(Vehiculo v)
         {
@@ -62,6 +62,14 @@ namespace LogicaNegocio
         public void ModificarVehiculo(Vehiculo v)
         {
             PersistenciaVehiculo.Modificar(v);
+        }
+        public List<Vehiculo> BuscarTodosVehiculos()
+        {
+            return PersistenciaVehiculo.BuscarTodos();
+        }
+        public Vehiculo BuscarVehiculo(string v)
+        {
+            return PersistenciaVehiculo.Buscar(v);
         }
         public void AltaExtra(Vehiculo v, Extra e)
         {
@@ -83,9 +91,9 @@ namespace LogicaNegocio
         {
             PersistenciaVehiculo.AñadirVehiculoSegundaMano(v);
         }
-        public bool ExisteVehiculoSegundaMano(VehiculoSegundaMano v)
+        public VehiculoSegundaMano BuscarVehiculoSegundaMano(string numBastidor)
         {
-            return PersistenciaVehiculo.BuscarVehiculoSegundaMano(v.NumBastidor) != null;
+            return PersistenciaVehiculo.BuscarVehiculoSegundaMano(numBastidor);
         }
         public void BajaVehiculoSegundaMano(VehiculoSegundaMano v)
         {
@@ -95,11 +103,15 @@ namespace LogicaNegocio
         {
             PersistenciaVehiculo.ModificarVehiculoSegundaMano(v);
         }
+        public bool ExisteVehiculoSegundaMano(string numBastidor)
+        {
+            return PersistenciaVehiculo.ExisteVehiculoSegundaMano(numBastidor);
+        }
     }
     public class LNPresupuesto
     {
         Empleado e;
-        internal LNPresupuesto(Empleado emp)
+        public LNPresupuesto(Empleado emp)
         {
             this.e = emp;
         }

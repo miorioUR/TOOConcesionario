@@ -46,6 +46,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FBastidor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FBastidor.Designer.cs">
+      <DependentUpon>FBastidor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FListadoV.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FListadoV.Designer.cs">
+      <DependentUpon>FListadoV.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormCliente.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -64,8 +76,26 @@
     <Compile Include="FormID.Designer.cs">
       <DependentUpon>FormID.cs</DependentUpon>
     </Compile>
+    <Compile Include="FRecorridoV.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FRecorridoV.Designer.cs">
+      <DependentUpon>FRecorridoV.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FVehiculo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FVehiculo.Designer.cs">
+      <DependentUpon>FVehiculo.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FBastidor.resx">
+      <DependentUpon>FBastidor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FListadoV.resx">
+      <DependentUpon>FListadoV.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormCliente.resx">
       <DependentUpon>FormCliente.cs</DependentUpon>
     </EmbeddedResource>
@@ -74,6 +104,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormID.resx">
       <DependentUpon>FormID.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FRecorridoV.resx">
+      <DependentUpon>FRecorridoV.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FVehiculo.resx">
+      <DependentUpon>FVehiculo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -84,6 +120,7 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <None Include="Properties\DataSources\MDVehiculo.Vehiculo.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -96,6 +133,16 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\LNCliente\LogicaNegocio.csproj">
+      <Project>{383CB744-80FF-4D1E-A2E3-D6912179A735}</Project>
+      <Name>LogicaNegocio</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ModeloDominio\ModeloDominio.csproj">
+      <Project>{F0D0BAD9-D25F-4B27-953B-1995D695969B}</Project>
+      <Name>ModeloDominio</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -30,6 +30,13 @@ namespace PersVehiculo
                 return null;
             }
         }
+        //Pre: n es un número de bastidor con formato valido.
+        //Post: Devuelve true si pertenece algún vehiculo a ese número de bastidor.
+        public static bool Existe(string n)
+        {
+            return BD.CONTAINSVehiculo(n);
+        }
+
         //Pre: v != null. v existente en la BD.  
         //Post: Permite modificar todos los valores de v excepto numBastidor.
         public static void Modificar(Vehiculo v)
@@ -41,6 +48,17 @@ namespace PersVehiculo
         public static void Eliminar(Vehiculo v)
         {
             BD.DELETEVehiculo(BD.SELECTVehiculo(v.NumBastidor));
+        }
+        //Pre:
+        //Post: Devuelve todos los vehiculos almacenados.
+        public static List<Vehiculo> BuscarTodos()
+        {
+            List<Vehiculo> lv = new List<Vehiculo>();
+            foreach (VehiculoDato v in BD.SELECTAllVehiculo())
+            {
+                lv.Add(new Vehiculo(v.NumBastidor, v.Marca, v.Modelo, v.Potencia, v.Precio));
+            }
+            return lv;
         }
         //Pre: e!=null, e no existente, v !=null,v ya existente
         //Post: Añade un extra al vehiculo v y a la lista de extras
@@ -105,6 +123,12 @@ namespace PersVehiculo
         public static void EliminarVehiculoSegundaMano(VehiculoSegundaMano v)
         {
             BD.DELETEVehiculoSegundaMano(BD.SELECTVehiculoSegundaMano(v.NumBastidor));
+        }
+        //Pre: n es un número de bastidor con formato valido.
+        //Post: Devuelve true si pertenece algún vehiculo a ese número de bastidor.
+        public static bool ExisteVehiculoSegundaMano(string n)
+        {
+            return BD.CONTAINSVehiculoSegundaMano(n);
         }
     }
 }
