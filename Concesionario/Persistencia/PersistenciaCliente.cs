@@ -33,12 +33,23 @@ namespace PersCliente
             }
         }
 
+        public static List<Cliente> BuscarTodos()
+        {
+            List<Cliente> lv = new List<Cliente>();
+            foreach (ClienteDato c in BD.SELECTAllCliente())
+            {
+                lv.Add(new Cliente(c.Dni,c.Nombre,c.Telefono,Conversores.CambioACategoria(c.Valor)));
+            }
+            return lv;
+        }
+
         //Pre: c != null. c existe.  
         //Post: Modifica c.
         public static void Modificar(Cliente c)
         {
             BD.UPDATECliente(new ClienteDato(c.Dni, c.Nombre, c.Telefono, Conversores.CambioACategoriaDato(c.Valor)));
         }
+
 
         //Pre: c != null. c no existe.
         //Post: Elimina c.

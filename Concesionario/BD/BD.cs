@@ -85,7 +85,15 @@ namespace BaseDatos
         {
             return Clientes[dni];
         }
-
+        public static List<ClienteDato> SELECTAllCliente()
+        {
+            List<ClienteDato> lc = new List<ClienteDato>();
+            foreach (ClienteDato c in Clientes)
+            {
+                lc.Add(c);
+            }
+            return lc;
+        }
         public static void UPDATECliente(ClienteDato c)
         {
             Clientes.Remove(c.Dni);

@@ -26,9 +26,9 @@ namespace LogicaNegocio
         {
             PersistenciaCliente.Añadir(c);
         }
-        public bool ExisteCliente(Cliente c)
+        public bool ExisteCliente(string s)
         {
-            return (PersistenciaCliente.Buscar(c.Dni) != null);
+            return (PersistenciaCliente.Buscar(s) != null);
         }
         public void BajaCliente(Cliente c)
         {
@@ -37,6 +37,14 @@ namespace LogicaNegocio
         public void ModificarCliente(Cliente c)
         {
             PersistenciaCliente.Modificar(c);
+        }
+        public List<Cliente> BuscarTodosClientes()
+        {
+            return PersistenciaCliente.BuscarTodos();
+        }
+        public Cliente BuscarCliente(string s)
+        {
+            return PersistenciaCliente.Buscar(s);
         }
     }
     public class LNVehiculo
