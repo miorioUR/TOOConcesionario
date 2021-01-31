@@ -28,7 +28,7 @@ namespace LogicaNegocio
         }
         public bool ExisteCliente(string s)
         {
-            return (PersistenciaCliente.Buscar(s) != null);
+            return PersistenciaCliente.Existe(s);
         }
         public void BajaCliente(Cliente c)
         {

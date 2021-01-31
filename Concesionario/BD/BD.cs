@@ -109,6 +109,13 @@ namespace BaseDatos
             List<ClienteDato> lcd = Clientes.ToList<ClienteDato>();
             return lcd;
         }
+        public static bool CONTAINSCliente(string c)
+        {
+            if (Clientes.Contains(c))
+                return true;
+            else
+                return false;
+        }
         //METODOS VEHICULO-----------------------------
         public static void INSERTVehiculo(VehiculoDato v)
         {

@@ -61,46 +61,68 @@ namespace Presentación
                     if (dr == DialogResult.OK)
                     {
 
-                        if (fc.getDNi (fc.getevo().Checked == true || fv.getSegMano().Checked == true))
+                        if (fc.getNombre() != "" &&  fc.getTelefono() != "")
                         {
-                            int potencia = Int32.Parse(fv.getPotencia());
-                            double precio = Double.Parse(fv.getPrecio());
-
-                            if (fv.getSegMano().Checked == true)
-                            {
-                                // Vehiculo segunda mano
-                                if (fv.getMatricula() != "" && fv.getFMatricula() != "")
-                                {
-                                    DateTime fMatricula = DateTime.Parse(fv.getFMatricula());
-                                    VehiculoSegundaMano vsm = new VehiculoSegundaMano(numBastidor, fv.getMarca(), fv.getModelo(), potencia, precio, fv.getMatricula(), fMatricula);
-                                    lnV.AltaVehiculoSegundaMano(vsm);
-                                }
-                            }
-                            else
-                            {
-                                // Vehiculo nuevo
-                                Vehiculo vv = new Vehiculo(numBastidor, fv.getMarca(), fv.getModelo(), potencia, precio);
-                                lnV.AltaVehiculo(vv);
-
-                            }
+                                Cliente c = new Cliente(DNI, fc.getNombre(), fc.getTelefono(), Categoria.A);
+                                lnC.AltaCliente(c);
                         }
                         else
                         {
-                            DialogResult error = MessageBox.Show("Debes introducir todos los datos del vehículo", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-
+                            DialogResult error = MessageBox.Show("Debes introducir todos los datos del cliente", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         }
                     }
                 }
-                fv.Dispose();
+                fc.Dispose();
             }
             i.Dispose();
         }
-    }
-
         private void TSMIBajaC_Click(object sender, EventArgs e)
         {
-            FID f = new FID(0);
-            f.ShowDialog();
+            FID i = new FID(0);
+            DialogResult r = i.ShowDialog();
+            string DNI = i.getID();
+
+            if (r == DialogResult.OK)
+            {
+                if (this.lnC.ExisteCliente(DNI))
+                {
+                    FCliente fc = new FCliente("Baja Cliente");
+                    Cliente c = null;
+
+                    if (lnC.ExisteCliente(DNI))
+                    {
+                        c = lnC.BuscarCliente(DNI);
+                        fc.setDNI(DNI, false);
+                        fc.setNombre(c.Nombre, false);
+                        fc.setTelefono(c.Telefono, false);
+                        fc.setCat(c.Valor, false);
+                    }
+                    DialogResult dd = fc.ShowDialog();
+
+                    if (dd == DialogResult.OK)
+                    {
+                        DialogResult aviso = MessageBox.Show("¿Estás seguro que desea dar de baja a ese cliente?", "Aviso", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+                        if (aviso == DialogResult.Yes)
+                        {
+                            this.lnC.BajaCliente(c);
+                        }
+                        MessageBox.Show("Cliente eliminado", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    }
+                    fc.Dispose();
+                }
+                else
+                {
+                    DialogResult dr = MessageBox.Show("¿Quieres introducir otro?", "No existe un cliente con ese dni", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                    if (dr == DialogResult.Yes)
+                    {
+                        i.Dispose();
+                        this.TSMIBajaV_Click(sender, e);
+                    }
+                }
+                i.Dispose();
+            }
         }
 
         private void TSMIBusquedaC_Click(object sender, EventArgs e)

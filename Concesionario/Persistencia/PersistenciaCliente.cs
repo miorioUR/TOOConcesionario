@@ -61,5 +61,9 @@ namespace PersCliente
         {
             return Conversores.CambioAListaCliente(BD.LISTClientes());
         }
+        public static bool Existe(string c)
+        {
+            return BD.CONTAINSCliente(c);
+        }
     }
 }

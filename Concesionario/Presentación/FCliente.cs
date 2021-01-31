@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MDCliente;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -43,21 +44,28 @@ namespace Presentación
             this.tbTeléfono.Text = tf;
             this.tbTeléfono.Enabled = e;
         }
-        public char getCat()
+        public Categoria getCat()
         {
             if (this.rbA.Checked)
             {
-                return 'A';
+                return Categoria.A;
             }
             else if (this.rbB.Checked)
             {
-                return 'B';
+                return Categoria.B;
             }
-            else if (this.rbC.Checked)
+            return Categoria.C;
+        }
+        public void setCat(Categoria c, bool e)
+        {
+            if (c.Equals(Categoria.A)) this.rbA.Checked = true;
+            else if (c.Equals(Categoria.B)) this.rbB.Checked = true;
+            if (!e)
             {
-                return 'C';
+                this.rbA.Enabled = false;
+                this.rbB.Enabled = false;
+                this.rbC.Enabled = false;
             }
-            return '0';
         }
     }
 }

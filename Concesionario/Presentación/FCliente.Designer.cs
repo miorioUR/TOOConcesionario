@@ -120,7 +120,6 @@ namespace Presentación
             this.rbA.Name = "rbA";
             this.rbA.Size = new System.Drawing.Size(32, 17);
             this.rbA.TabIndex = 9;
-            this.rbA.TabStop = true;
             this.rbA.Text = "A";
             this.rbA.UseVisualStyleBackColor = true;
             // 
@@ -131,13 +130,13 @@ namespace Presentación
             this.rbB.Name = "rbB";
             this.rbB.Size = new System.Drawing.Size(32, 17);
             this.rbB.TabIndex = 10;
-            this.rbB.TabStop = true;
             this.rbB.Text = "B";
             this.rbB.UseVisualStyleBackColor = true;
             // 
             // rbC
             // 
             this.rbC.AutoSize = true;
+            this.rbC.Checked = true;
             this.rbC.Location = new System.Drawing.Point(132, 21);
             this.rbC.Name = "rbC";
             this.rbC.Size = new System.Drawing.Size(32, 17);
@@ -158,7 +157,7 @@ namespace Presentación
             this.gbCategoria.TabStop = false;
             this.gbCategoria.Text = "Categoria";
             // 
-            // FormCliente
+            // FCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -172,7 +171,7 @@ namespace Presentación
             this.Controls.Add(this.lbDNI);
             this.Controls.Add(this.btCancelar);
             this.Controls.Add(this.btAceptar);
-            this.Name = "FormCliente";
+            this.Name = "FCliente";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Busqueda de un cliente";
             this.gbCategoria.ResumeLayout(false);
