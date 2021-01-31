@@ -87,6 +87,131 @@ namespace Utilidades
                 }
             }
         }
+        public static int comparaVehiculosNumBastidor(Vehiculo v1,Vehiculo v2)
+        {
+            if (v1.Equals(null))
+            {
+                if (v2.Equals(null))
+                {
+                    return 0;
+                }
+                else
+                {
+                    return -1;
+                }
+            }
+            else
+            {
+                if (v2.Equals(null))
+                {
+                    return 1;
+                }
+                else
+                {
+                    return v1.NumBastidor.CompareTo(v2.NumBastidor);
+                }
+            }
+        }
+        public static int comparaVehiculosMarca(Vehiculo v1, Vehiculo v2)
+        {
+            if (v1.Equals(null))
+            {
+                if (v2.Equals(null))
+                {
+                    return 0;
+                }
+                else
+                {
+                    return -1;
+                }
+            }
+            else
+            {
+                if (v2.Equals(null))
+                {
+                    return 1;
+                }
+                else
+                {
+                    return v1.Marca.CompareTo(v2.Marca);
+                }
+            }
+        }
+        public static int comparaVehiculosModelo(Vehiculo v1, Vehiculo v2)
+        {
+            if (v1.Equals(null))
+            {
+                if (v2.Equals(null))
+                {
+                    return 0;
+                }
+                else
+                {
+                    return -1;
+                }
+            }
+            else
+            {
+                if (v2.Equals(null))
+                {
+                    return 1;
+                }
+                else
+                {
+                    return v1.Modelo.CompareTo(v2.Modelo);
+                }
+            }
+        }
+        public static int comparaVehiculosPotencia(Vehiculo v1, Vehiculo v2)
+        {
+            if (v1.Equals(null))
+            {
+                if (v2.Equals(null))
+                {
+                    return 0;
+                }
+                else
+                {
+                    return -1;
+                }
+            }
+            else
+            {
+                if (v2.Equals(null))
+                {
+                    return 1;
+                }
+                else
+                {
+                    return v1.Potencia.CompareTo(v2.Potencia);
+                }
+            }
+        }
+        public static int comparaVehiculosPrecio(Vehiculo v1, Vehiculo v2)
+        {
+            if (v1.Equals(null))
+            {
+                if (v2.Equals(null))
+                {
+                    return 0;
+                }
+                else
+                {
+                    return -1;
+                }
+            }
+            else
+            {
+                if (v2.Equals(null))
+                {
+                    return 1;
+                }
+                else
+                {
+                    return v1.Precio.CompareTo(v2.Precio);
+                }
+            }
+        }
     }
     class Calculadora
     {
