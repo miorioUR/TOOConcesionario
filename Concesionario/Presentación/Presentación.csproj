@@ -52,6 +52,12 @@
     <Compile Include="FListadoC.Designer.cs">
       <DependentUpon>FListadoC.cs</DependentUpon>
     </Compile>
+    <Compile Include="FListadoP.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FListadoP.Designer.cs">
+      <DependentUpon>FListadoP.cs</DependentUpon>
+    </Compile>
     <Compile Include="FListadoV.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -76,11 +82,23 @@
     <Compile Include="FID.Designer.cs">
       <DependentUpon>FID.cs</DependentUpon>
     </Compile>
+    <Compile Include="FPresupuesto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FPresupuesto.Designer.cs">
+      <DependentUpon>FPresupuesto.cs</DependentUpon>
+    </Compile>
     <Compile Include="FRecorridoC.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FRecorridoC.Designer.cs">
       <DependentUpon>FRecorridoC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FRecorridoP.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FRecorridoP.Designer.cs">
+      <DependentUpon>FRecorridoP.cs</DependentUpon>
     </Compile>
     <Compile Include="FRecorridoV.cs">
       <SubType>Form</SubType>

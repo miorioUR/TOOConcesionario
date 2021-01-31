@@ -166,7 +166,7 @@ namespace Presentación
         }
         private void listadoToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            FListadoC fc = new FListadoC(this.lnP);
+            FListadoC fc = new FListadoC(this.lnC);
             fc.ShowDialog();
         }
 

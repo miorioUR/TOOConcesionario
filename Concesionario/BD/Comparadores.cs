@@ -12,80 +12,20 @@ namespace Utilidades
 {
     public class Comparadores
     {
+        //PRE: c1 y c2 no nulos
         public static int comparaClienteDNI(Cliente c1, Cliente c2)
         {
-            if (c1.Equals(null))
-            {
-                if (c2.Equals(null))
-                {
-                    return 0;
-                }
-                else
-                {
-                    return -1;
-                }
-            }
-            else
-            {
-                if (c2.Equals(null))
-                {
-                    return 1;
-                }
-                else
-                {
-                    return c1.Dni.CompareTo(c2.Dni);
-                }
-            }
+            return c1.Dni.CompareTo(c2.Dni);
         }
-        public static int comparaClienteNombre(Cliente c1, Cliente c2)
-        {
-            if (c1.Equals(null))
-            {
-                if (c2.Equals(null))
-                {
-                    return 0;
-                }
-                else
-                {
-                    return -1;
-                }
-            }
-            else
-            {
-                if (c2.Equals(null))
-                {
-                    return 1;
-                }
-                else
-                {
-                    return c1.Nombre.CompareTo(c2.Nombre);
-                }
-            }
+        //PRE: c1 y c2 no nulos
+        public static int comparaClienteNombre(Cliente c1, Cliente c2) 
+        { 
+            return c1.Nombre.CompareTo(c2.Nombre);
         }
+        //PRE: c1 y c2 no nulos
         public static int comparaClienteImporte(Cliente c1, Cliente c2)
         {
-            if (c1.Equals(null))
-            {
-                if (c2.Equals(null))
-                {
-                    return 0;
-                }
-                else
-                {
-                    return -1;
-                }
-            }
-            else
-            {
-                if (c2.Equals(null))
-                {
-                    return 1;
-                }
-                else
-                {
-                    return Calculadora.calcularPago(c1).CompareTo(Calculadora.calcularPago(c2));
-                }
-            }
+            return Calculadora.calcularPago(c1).CompareTo(Calculadora.calcularPago(c2));
         }
     }
     public class Calculadora
@@ -121,7 +61,7 @@ namespace Utilidades
             double pago = 0;
             foreach (PresupuestoDato p in BD.Presupuestos)
             {
-                if (p.Cliente.Dni.Equals(c.Dni)) 
+                if (p.Cliente.Dni==c.Dni) 
                 {
                     pago = calcularImporte(p);
                 }

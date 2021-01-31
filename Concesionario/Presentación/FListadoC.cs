@@ -15,38 +15,41 @@ namespace Presentación
 {
     public partial class FListadoC : Form
     {
-        LogicaNegocio.LNPresupuesto lnp;
-        public FListadoC(LogicaNegocio.LNPresupuesto l)
+        LogicaNegocio.LNCliente lnc;
+        public FListadoC(LogicaNegocio.LNCliente l)
         {
             InitializeComponent();
-            this.lnp = l;
-            List<Presupuesto> lc = lnp.ListaPresupuestosDNI();
+            this.lnc = l;
+            List<Cliente> lc = lnc.ListaClientesDNI();
             LoadData(lc);
         }
-        public void LoadData(List<Presupuesto> lc)
+        public void LoadData(List<Cliente> lc)
         {
-            foreach (Presupuesto p in lc) {
-                lbDNI.Items.Add(p.Cliente.Dni);
-                lbNombre.Items.Add(p.Cliente.Nombre);
-                lbImporte.Items.Add(Utilidades.Calculadora.calcularImporte(p));
+            lbDNI.Items.Clear();
+            lbNombre.Items.Clear();
+            lbImporte.Items.Clear();
+            foreach (Cliente c in lc) {
+                lbDNI.Items.Add(c.Dni);
+                lbNombre.Items.Add(c.Nombre);
+                lbImporte.Items.Add(Calculadora.calcularPago(c));
             }
         }
 
         private void btDNI_Click(object sender, EventArgs e)
         {
-            List<Presupuesto> lc = lnp.ListaPresupuestosDNI();
+            List<Cliente> lc = lnc.ListaClientesDNI();
             LoadData(lc);
         }
 
         private void btNombre_Click(object sender, EventArgs e)
         {
-            List<Presupuesto> lc = lnp.ListaPresupuestosNombre();
+            List<Cliente> lc = lnc.ListaClientesNombre();
             LoadData(lc);
         }
 
         private void btImporte_Click(object sender, EventArgs e)
         {
-            List<Presupuesto> lc = lnp.ListaPresupuestosImporte();
+            List<Cliente> lc = lnc.ListaClientesImporte();
             LoadData(lc);
         }
     }

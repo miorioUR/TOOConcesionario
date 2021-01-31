@@ -132,36 +132,6 @@ namespace LogicaNegocio
         {
             return PersistenciaVehiculo.ExisteVehiculoSegundaMano(numBastidor);
         }
-        public List<Vehiculo> ListaVehiculosNumBastidor()
-        {
-            List<Vehiculo> lv = PersistenciaVehiculo.ListarVehiculos();
-            lv.Sort(Comparadores.comparaVehiculosNumBastidor);
-            return lv;
-        }
-        public List<Vehiculo> ListaVehiculosMarca()
-        {
-            List<Vehiculo> lv = PersistenciaVehiculo.ListarVehiculos();
-            lv.Sort(Comparadores.comparaVehiculosMarca);
-            return lv;
-        }
-        public List<Vehiculo> ListaVehiculosModelo()
-        {
-            List<Vehiculo> lv = PersistenciaVehiculo.ListarVehiculos();
-            lv.Sort(Comparadores.comparaVehiculosModelo);
-            return lv;
-        }
-        public List<Vehiculo> ListaVehiculosPotencia()
-        {
-            List<Vehiculo> lv = PersistenciaVehiculo.ListarVehiculos();
-            lv.Sort(Comparadores.comparaVehiculosPotencia);
-            return lv;
-        }
-        public List<Vehiculo> ListaVehiculosPrecio()
-        {
-            List<Vehiculo> lv = PersistenciaVehiculo.ListarVehiculos();
-            lv.Sort(Comparadores.comparaVehiculosPrecio);
-            return lv;
-        }
     }
     public class LNPresupuesto
     {
