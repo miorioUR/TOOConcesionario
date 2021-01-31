@@ -46,11 +46,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="FBastidor.cs">
+    <Compile Include="FListadoC.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FBastidor.Designer.cs">
-      <DependentUpon>FBastidor.cs</DependentUpon>
+    <Compile Include="FListadoC.Designer.cs">
+      <DependentUpon>FListadoC.cs</DependentUpon>
     </Compile>
     <Compile Include="FListadoV.cs">
       <SubType>Form</SubType>
@@ -58,23 +58,29 @@
     <Compile Include="FListadoV.Designer.cs">
       <DependentUpon>FListadoV.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormCliente.cs">
+    <Compile Include="FCliente.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormCliente.Designer.cs">
-      <DependentUpon>FormCliente.cs</DependentUpon>
+    <Compile Include="FCliente.Designer.cs">
+      <DependentUpon>FCliente.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormBase.cs">
+    <Compile Include="FBase.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormBase.Designer.cs">
-      <DependentUpon>FormBase.cs</DependentUpon>
+    <Compile Include="FBase.Designer.cs">
+      <DependentUpon>FBase.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormID.cs">
+    <Compile Include="FID.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormID.Designer.cs">
-      <DependentUpon>FormID.cs</DependentUpon>
+    <Compile Include="FID.Designer.cs">
+      <DependentUpon>FID.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FRecorridoC.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FRecorridoC.Designer.cs">
+      <DependentUpon>FRecorridoC.cs</DependentUpon>
     </Compile>
     <Compile Include="FRecorridoV.cs">
       <SubType>Form</SubType>
@@ -90,20 +96,23 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="FBastidor.resx">
-      <DependentUpon>FBastidor.cs</DependentUpon>
+    <EmbeddedResource Include="FListadoC.resx">
+      <DependentUpon>FListadoC.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FListadoV.resx">
       <DependentUpon>FListadoV.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormCliente.resx">
-      <DependentUpon>FormCliente.cs</DependentUpon>
+    <EmbeddedResource Include="FCliente.resx">
+      <DependentUpon>FCliente.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormBase.resx">
-      <DependentUpon>FormBase.cs</DependentUpon>
+    <EmbeddedResource Include="FBase.resx">
+      <DependentUpon>FBase.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormID.resx">
-      <DependentUpon>FormID.cs</DependentUpon>
+    <EmbeddedResource Include="FID.resx">
+      <DependentUpon>FID.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FRecorridoC.resx">
+      <DependentUpon>FRecorridoC.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FRecorridoV.resx">
       <DependentUpon>FRecorridoV.cs</DependentUpon>
@@ -120,6 +129,7 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <None Include="Properties\DataSources\MDCliente.Cliente.datasource" />
     <None Include="Properties\DataSources\MDVehiculo.Vehiculo.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

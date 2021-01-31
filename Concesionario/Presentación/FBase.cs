@@ -1,6 +1,7 @@
 ﻿using LogicaNegocio;
 using MDPresupuesto;
 using MDVehiculo;
+using MDCliente;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,7 +14,7 @@ using System.Windows.Forms;
 
 namespace Presentación
 {
-    public partial class FormBase : Form
+    public partial class FBase : Form
     {
         private Empleado e;
         private LNCliente lnC;
@@ -21,7 +22,7 @@ namespace Presentación
         private LNPresupuesto lnP;
         private LN ln;
 
-        public FormBase()
+        public FBase()
         {
             this.e = new Empleado("1234", "Pepe");
             this.lnC = new LNCliente(e);
@@ -33,27 +34,99 @@ namespace Presentación
 
         private void TSMIAltaC_Click(object sender, EventArgs e)
         {
-            Form f = new FormID(0,0);
-            f.ShowDialog();
+            FID i = new FID(0);
+            DialogResult r = i.ShowDialog();
+            string DNI = i.getID();
+
+            if (r == DialogResult.OK)
+            {
+                FCliente fc = null;
+
+                if (DNI == "" || this.lnC.ExisteCliente(DNI))
+                {
+                    DialogResult dr = MessageBox.Show("Ya existe un cliente con ese DNI o no ha rellenado el campo 'DNI'.", "¿Quieres introducir otro?", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                    if (dr == DialogResult.Yes)
+                    {
+                        i.Dispose();
+                        this.TSMIAltaC_Click(sender, e);
+                    }
+                }
+                else
+                {
+                    fc = new FCliente("Alta Cliente");
+                    fc.setDNI(DNI, false);
+                    DialogResult dr = fc.ShowDialog();
+
+                    if (dr == DialogResult.OK)
+                    {
+
+                        if (fc.getDNi (fc.getevo().Checked == true || fv.getSegMano().Checked == true))
+                        {
+                            int potencia = Int32.Parse(fv.getPotencia());
+                            double precio = Double.Parse(fv.getPrecio());
+
+                            if (fv.getSegMano().Checked == true)
+                            {
+                                // Vehiculo segunda mano
+                                if (fv.getMatricula() != "" && fv.getFMatricula() != "")
+                                {
+                                    DateTime fMatricula = DateTime.Parse(fv.getFMatricula());
+                                    VehiculoSegundaMano vsm = new VehiculoSegundaMano(numBastidor, fv.getMarca(), fv.getModelo(), potencia, precio, fv.getMatricula(), fMatricula);
+                                    lnV.AltaVehiculoSegundaMano(vsm);
+                                }
+                            }
+                            else
+                            {
+                                // Vehiculo nuevo
+                                Vehiculo vv = new Vehiculo(numBastidor, fv.getMarca(), fv.getModelo(), potencia, precio);
+                                lnV.AltaVehiculo(vv);
+
+                            }
+                        }
+                        else
+                        {
+                            DialogResult error = MessageBox.Show("Debes introducir todos los datos del vehículo", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                        }
+                    }
+                }
+                fv.Dispose();
+            }
+            i.Dispose();
         }
+    }
 
         private void TSMIBajaC_Click(object sender, EventArgs e)
         {
-            Form f = new FormID(0,1);
+            FID f = new FID(0);
             f.ShowDialog();
         }
 
         private void TSMIBusquedaC_Click(object sender, EventArgs e)
         {
-            Form f = new FormID(0,2);
+            FID f = new FID(0);
             f.ShowDialog();
+        }
+
+        private void recorridoUnoAUnoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            List<Cliente> lc = this.lnC.BuscarTodosClientes();
+            FRecorridoC fc = new FRecorridoC(lc);
+            fc.ShowDialog();
+        }
+        private void listadoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            List<Cliente> lc = this.lnC.BuscarTodosClientes();
+            FListadoC fc = new FListadoC(lc);
+            fc.ShowDialog();
         }
 
         private void TSMIAltaV_Click(object sender, EventArgs e)
         {
-            FBastidor i = new FBastidor();
+            FID i = new FID(1);
             DialogResult r = i.ShowDialog();
-            string numBastidor = i.getNumBastidor();
+            string numBastidor = i.getID();
 
             if (r == DialogResult.OK)
             {
@@ -115,17 +188,15 @@ namespace Presentación
 
         private void TSMIBajaV_Click(object sender, EventArgs e)
         {
-            FBastidor i = new FBastidor();
+            FID i = new FID(1);
             DialogResult r = i.ShowDialog();
-            string numBastidor = i.getNumBastidor();
+            string numBastidor = i.getID();
 
             if (r == DialogResult.OK)
-            {
-                FVehiculo fv = null;
-                
-                if (numBastidor != "" || this.lnV.ExisteVehiculo(numBastidor))
+            {                
+                if (this.lnV.ExisteVehiculo(numBastidor))
                 {
-                    fv = new FVehiculo("Baja vehiculo");
+                    FVehiculo fv = new FVehiculo("Baja vehiculo");
                     Vehiculo vv = null;
                     VehiculoSegundaMano vs = null;
 
@@ -180,25 +251,24 @@ namespace Presentación
                         this.TSMIBajaV_Click(sender, e);
                     }
                 }
-                fv.Dispose();
                 i.Dispose();
             }
         }
 
         private void TSMIBusquedaV_Click(object sender, EventArgs e)
         {
-            FBastidor i = new FBastidor();
+            FID i = new FID(1);
             DialogResult r = i.ShowDialog();
-            string numBastidor = i.getNumBastidor();
+            string numBastidor = i.getID();
 
             if (r == DialogResult.OK)
             {
-                FVehiculo fv = null;
                 if (this.lnV.ExisteVehiculo(numBastidor))
                 {
+
                     Vehiculo vv = null;
                     VehiculoSegundaMano vs = null;
-                    fv = new FVehiculo("Búsqueda de vehículo");
+                    FVehiculo fv = new FVehiculo("Búsqueda de vehículo");
                     if (lnV.ExisteVehiculo(numBastidor))
                     {
                         vv = lnV.BuscarVehiculo(numBastidor);
@@ -233,7 +303,6 @@ namespace Presentación
                         this.TSMIBajaV_Click(sender, e);
                     }
                 }
-                fv.Dispose();
                 i.Dispose();
             }
         }

@@ -1,6 +1,7 @@
-﻿namespace Presentación
+﻿
+namespace Presentación
 {
-    partial class FRecorridoV
+    partial class FRecorridoC
     {
         /// <summary>
         /// Required designer variable.
@@ -29,19 +30,14 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FRecorridoV));
-            this.lNumBastidor = new System.Windows.Forms.Label();
-            this.lMarca = new System.Windows.Forms.Label();
-            this.lModelo = new System.Windows.Forms.Label();
-            this.lPotencia = new System.Windows.Forms.Label();
-            this.lPrecio = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.bCerrar = new System.Windows.Forms.Button();
-            this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FRecorridoC));
+            this.lbDNI = new System.Windows.Forms.Label();
+            this.lbNombre = new System.Windows.Forms.Label();
+            this.lbTelefono = new System.Windows.Forms.Label();
+            this.tbNombre = new System.Windows.Forms.TextBox();
+            this.tbTelefono = new System.Windows.Forms.TextBox();
+            this.tbDNI = new System.Windows.Forms.TextBox();
+            this.btCerrar = new System.Windows.Forms.Button();
             this.bindingNavigator1 = new System.Windows.Forms.BindingNavigator(this.components);
             this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
@@ -54,104 +50,69 @@
             this.bindingNavigatorMoveNextItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
-            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
+            this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.bindingNavigator1)).BeginInit();
             this.bindingNavigator1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
-            // lNumBastidor
+            // lbDNI
             // 
-            this.lNumBastidor.AutoSize = true;
-            this.lNumBastidor.Location = new System.Drawing.Point(73, 72);
-            this.lNumBastidor.Name = "lNumBastidor";
-            this.lNumBastidor.Size = new System.Drawing.Size(102, 13);
-            this.lNumBastidor.TabIndex = 0;
-            this.lNumBastidor.Text = "Número de bastidor:";
+            this.lbDNI.AutoSize = true;
+            this.lbDNI.Location = new System.Drawing.Point(76, 72);
+            this.lbDNI.Name = "lbDNI";
+            this.lbDNI.Size = new System.Drawing.Size(29, 13);
+            this.lbDNI.TabIndex = 1;
+            this.lbDNI.Text = "DNI:";
             // 
-            // lMarca
+            // lbNombre
             // 
-            this.lMarca.AutoSize = true;
-            this.lMarca.Location = new System.Drawing.Point(73, 128);
-            this.lMarca.Name = "lMarca";
-            this.lMarca.Size = new System.Drawing.Size(40, 13);
-            this.lMarca.TabIndex = 1;
-            this.lMarca.Text = "Marca:";
+            this.lbNombre.AutoSize = true;
+            this.lbNombre.Location = new System.Drawing.Point(76, 113);
+            this.lbNombre.Name = "lbNombre";
+            this.lbNombre.Size = new System.Drawing.Size(47, 13);
+            this.lbNombre.TabIndex = 2;
+            this.lbNombre.Text = "Nombre:";
             // 
-            // lModelo
+            // lbTelefono
             // 
-            this.lModelo.AutoSize = true;
-            this.lModelo.Location = new System.Drawing.Point(73, 186);
-            this.lModelo.Name = "lModelo";
-            this.lModelo.Size = new System.Drawing.Size(45, 13);
-            this.lModelo.TabIndex = 2;
-            this.lModelo.Text = "Modelo:";
+            this.lbTelefono.AutoSize = true;
+            this.lbTelefono.Location = new System.Drawing.Point(76, 152);
+            this.lbTelefono.Name = "lbTelefono";
+            this.lbTelefono.Size = new System.Drawing.Size(49, 13);
+            this.lbTelefono.TabIndex = 3;
+            this.lbTelefono.Text = "Teléfono";
             // 
-            // lPotencia
+            // tbNombre
             // 
-            this.lPotencia.AutoSize = true;
-            this.lPotencia.Location = new System.Drawing.Point(73, 246);
-            this.lPotencia.Name = "lPotencia";
-            this.lPotencia.Size = new System.Drawing.Size(52, 13);
-            this.lPotencia.TabIndex = 3;
-            this.lPotencia.Text = "Potencia:";
+            this.tbNombre.Location = new System.Drawing.Point(188, 106);
+            this.tbNombre.Name = "tbNombre";
+            this.tbNombre.Size = new System.Drawing.Size(100, 20);
+            this.tbNombre.TabIndex = 4;
             // 
-            // lPrecio
+            // tbTelefono
             // 
-            this.lPrecio.AutoSize = true;
-            this.lPrecio.Location = new System.Drawing.Point(73, 301);
-            this.lPrecio.Name = "lPrecio";
-            this.lPrecio.Size = new System.Drawing.Size(108, 13);
-            this.lPrecio.TabIndex = 4;
-            this.lPrecio.Text = "Precio recomendado:";
+            this.tbTelefono.Location = new System.Drawing.Point(188, 145);
+            this.tbTelefono.Name = "tbTelefono";
+            this.tbTelefono.Size = new System.Drawing.Size(100, 20);
+            this.tbTelefono.TabIndex = 5;
             // 
-            // textBox1
+            // tbDNI
             // 
-            this.textBox1.Location = new System.Drawing.Point(244, 65);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 5;
+            this.tbDNI.Location = new System.Drawing.Point(188, 65);
+            this.tbDNI.Name = "tbDNI";
+            this.tbDNI.Size = new System.Drawing.Size(100, 20);
+            this.tbDNI.TabIndex = 6;
             // 
-            // textBox2
+            // btCerrar
             // 
-            this.textBox2.Location = new System.Drawing.Point(244, 121);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 20);
-            this.textBox2.TabIndex = 6;
-            // 
-            // textBox3
-            // 
-            this.textBox3.Location = new System.Drawing.Point(244, 179);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(100, 20);
-            this.textBox3.TabIndex = 7;
-            // 
-            // textBox4
-            // 
-            this.textBox4.Location = new System.Drawing.Point(244, 239);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(100, 20);
-            this.textBox4.TabIndex = 8;
-            // 
-            // textBox5
-            // 
-            this.textBox5.Location = new System.Drawing.Point(244, 294);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(100, 20);
-            this.textBox5.TabIndex = 9;
-            // 
-            // bCerrar
-            // 
-            this.bCerrar.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.bCerrar.Location = new System.Drawing.Point(140, 391);
-            this.bCerrar.Name = "bCerrar";
-            this.bCerrar.Size = new System.Drawing.Size(75, 23);
-            this.bCerrar.TabIndex = 10;
-            this.bCerrar.Text = "Cerrar";
-            this.bCerrar.UseVisualStyleBackColor = true;
-            // 
-            // bindingSource1
-            // 
-            this.bindingSource1.DataSource = typeof(MDVehiculo.VehiculoSegundaMano);
+            this.btCerrar.DialogResult = System.Windows.Forms.DialogResult.OK;
+            this.btCerrar.Location = new System.Drawing.Point(140, 228);
+            this.btCerrar.Name = "btCerrar";
+            this.btCerrar.Size = new System.Drawing.Size(75, 23);
+            this.btCerrar.TabIndex = 7;
+            this.btCerrar.Text = "Cerrar";
+            this.btCerrar.UseVisualStyleBackColor = true;
             // 
             // bindingNavigator1
             // 
@@ -177,8 +138,8 @@
             this.bindingNavigator1.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
             this.bindingNavigator1.Name = "bindingNavigator1";
             this.bindingNavigator1.PositionItem = this.bindingNavigatorPositionItem;
-            this.bindingNavigator1.Size = new System.Drawing.Size(405, 25);
-            this.bindingNavigator1.TabIndex = 11;
+            this.bindingNavigator1.Size = new System.Drawing.Size(339, 25);
+            this.bindingNavigator1.TabIndex = 12;
             this.bindingNavigator1.Text = "bindingNavigator1";
             // 
             // bindingNavigatorAddNewItem
@@ -269,48 +230,43 @@
             this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator2";
             this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 25);
             // 
-            // FRecorridoV
+            // bindingSource1
+            // 
+            this.bindingSource1.AllowNew = false;
+            this.bindingSource1.DataSource = typeof(MDCliente.Cliente);
+            // 
+            // FRecorridoC
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(405, 450);
+            this.ClientSize = new System.Drawing.Size(339, 321);
             this.Controls.Add(this.bindingNavigator1);
-            this.Controls.Add(this.bCerrar);
-            this.Controls.Add(this.textBox5);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.lPrecio);
-            this.Controls.Add(this.lPotencia);
-            this.Controls.Add(this.lModelo);
-            this.Controls.Add(this.lMarca);
-            this.Controls.Add(this.lNumBastidor);
-            this.Name = "FRecorridoV";
-            this.Text = "Datos de un vehículo";
-            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
+            this.Controls.Add(this.btCerrar);
+            this.Controls.Add(this.tbDNI);
+            this.Controls.Add(this.tbTelefono);
+            this.Controls.Add(this.tbNombre);
+            this.Controls.Add(this.lbTelefono);
+            this.Controls.Add(this.lbNombre);
+            this.Controls.Add(this.lbDNI);
+            this.Name = "FRecorridoC";
+            this.Text = "FRecorridoC";
             ((System.ComponentModel.ISupportInitialize)(this.bindingNavigator1)).EndInit();
             this.bindingNavigator1.ResumeLayout(false);
             this.bindingNavigator1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Label lNumBastidor;
-        private System.Windows.Forms.Label lMarca;
-        private System.Windows.Forms.Label lModelo;
-        private System.Windows.Forms.Label lPotencia;
-        private System.Windows.Forms.Label lPrecio;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.Button bCerrar;
-        private System.Windows.Forms.BindingSource bindingSource1;
+        private System.Windows.Forms.Label lbDNI;
+        private System.Windows.Forms.Label lbNombre;
+        private System.Windows.Forms.Label lbTelefono;
+        private System.Windows.Forms.TextBox tbNombre;
+        private System.Windows.Forms.TextBox tbTelefono;
+        private System.Windows.Forms.TextBox tbDNI;
+        private System.Windows.Forms.Button btCerrar;
         private System.Windows.Forms.BindingNavigator bindingNavigator1;
         private System.Windows.Forms.ToolStripButton bindingNavigatorAddNewItem;
         private System.Windows.Forms.ToolStripLabel bindingNavigatorCountItem;
@@ -323,5 +279,6 @@
         private System.Windows.Forms.ToolStripButton bindingNavigatorMoveNextItem;
         private System.Windows.Forms.ToolStripButton bindingNavigatorMoveLastItem;
         private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator2;
+        private System.Windows.Forms.BindingSource bindingSource1;
     }
 }
