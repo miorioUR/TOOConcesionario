@@ -208,7 +208,7 @@ namespace Utilidades
                 }
                 else
                 {
-                    return v1.Precio.CompareTo(v2.Precio);
+                    return Calculadora.calcularPrecio(v1).CompareTo(Calculadora.calcularPrecio(v2));
                 }
             }
         }
@@ -220,15 +220,7 @@ namespace Utilidades
             double importe = 0;
             foreach(ValoracionDato v in p.ListaValoraciones)
             {
-                double importevehiculo = v.Vehiculo.Precio;
-                if (v.Vehiculo.ListaExtras != null)
-                {
-                    foreach(ExtraDato e in v.Vehiculo.ListaExtras)
-                    {
-                        importevehiculo = importevehiculo + e.Precio;
-                    }
-                }
-                importe = importe + importevehiculo * v.Vehiculo.Iva;
+                importe = importe + v.Precio;
             }
             if (p.Cliente.Valor.Equals(CategoriaDato.A)) { importe = importe * 1.05; }
             if (p.Cliente.Valor.Equals(CategoriaDato.B)) { importe = importe * 1.1; }
@@ -241,21 +233,37 @@ namespace Utilidades
             double importe = 0;
             foreach (Valoracion v in p.ListaValoraciones)
             {
-                double importevehiculo = v.Vehiculo.Precio;
-                if (v.Vehiculo.ListaExtras != null)
-                {
-                    foreach (Extra e in v.Vehiculo.ListaExtras)
-                    {
-                        importevehiculo = importevehiculo + e.Precio;
-                    }
-                }
-                importe = importe + importevehiculo * v.Vehiculo.Iva;
+                importe = importe + v.Precio;
             }
             if (p.Cliente.Valor.Equals(Categoria.A)) { importe = importe * 1.05; }
             if (p.Cliente.Valor.Equals(Categoria.B)) { importe = importe * 1.1; }
             else { importe = importe * 1.15; }
 
             return importe;
+        }
+        public static double calcularPrecio(VehiculoDato v)
+        {
+            double importevehiculo = v.Precio;
+            if (v.ListaExtras != null)
+            {
+                foreach (ExtraDato e in v.ListaExtras)
+                {
+                    importevehiculo = importevehiculo + e.Precio;
+                }
+            }
+            return importevehiculo * v.Iva;
+        }
+        public static double calcularPrecio(Vehiculo v)
+        {
+            double importevehiculo = v.Precio;
+            if (v.ListaExtras != null)
+            {
+                foreach (Extra e in v.ListaExtras)
+                {
+                    importevehiculo = importevehiculo + e.Precio;
+                }
+            }
+            return importevehiculo * v.Iva;
         }
     }
 }
