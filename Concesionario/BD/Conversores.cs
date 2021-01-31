@@ -49,11 +49,38 @@ namespace Utilidades
         public static List<Valoracion> CambioAListaValoracion(List<ValoracionDato> lvd)
         {
             List<Valoracion> lv = new List<Valoracion>();
-            foreach (Valoracion v in lv)
+            foreach (ValoracionDato v in lvd)
             {
                 lv.Add(new Valoracion(new Vehiculo(v.Vehiculo.NumBastidor, v.Vehiculo.Marca, v.Vehiculo.Modelo, v.Vehiculo.Potencia, v.Vehiculo.Precio), v.Precio));
             }
             return lv;
+        }
+        public static List<Cliente> CambioAListaCliente(List<ClienteDato> lcd)
+        {
+            List<Cliente> lc = new List<Cliente>();
+            foreach (ClienteDato c in lcd)
+            {
+                lc.Add(new Cliente(c.Dni,c.Nombre,c.Telefono,Conversores.CambioACategoria(c.Valor)));
+            }
+            return lc;
+        }
+        public static List<Vehiculo> CambioAListaVehiculo(List<VehiculoDato> lvd)
+        {
+            List<Vehiculo> lv = new List<Vehiculo>();
+            foreach (VehiculoDato v in lvd)
+            {
+                lv.Add(new Vehiculo(v.NumBastidor,v.Marca,v.Modelo,v.Potencia,v.Precio));
+            }
+            return lv;
+        }
+        public static List<Presupuesto> CambioAListaPresupuesto(List<PresupuestoDato> lpd)
+        {
+            List<Presupuesto> lp = new List<Presupuesto>();
+            foreach (PresupuestoDato p in lpd)
+            {
+                lp.Add(new Presupuesto(p.Id,Conversores.CambioAEmpleado(p.Empleado),Conversores.CambioACliente(p.Cliente),Conversores.CambioAListaValoracion(p.ListaValoraciones)));
+            }
+            return lp;
         }
         public static Empleado CambioAEmpleado(EmpleadoDato e)
         {
