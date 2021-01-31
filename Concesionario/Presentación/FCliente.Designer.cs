@@ -1,7 +1,7 @@
 ﻿
 namespace Presentación
 {
-    partial class FormCliente
+    partial class FCliente
     {
         /// <summary>
         /// Required designer variable.
@@ -46,23 +46,23 @@ namespace Presentación
             // 
             // btAceptar
             // 
+            this.btAceptar.DialogResult = System.Windows.Forms.DialogResult.OK;
             this.btAceptar.Location = new System.Drawing.Point(34, 247);
             this.btAceptar.Name = "btAceptar";
             this.btAceptar.Size = new System.Drawing.Size(75, 23);
             this.btAceptar.TabIndex = 0;
             this.btAceptar.Text = "Aceptar";
             this.btAceptar.UseVisualStyleBackColor = true;
-            this.btAceptar.Click += new System.EventHandler(this.btAceptar_Click);
             // 
             // btCancelar
             // 
+            this.btCancelar.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btCancelar.Location = new System.Drawing.Point(139, 247);
             this.btCancelar.Name = "btCancelar";
             this.btCancelar.Size = new System.Drawing.Size(75, 23);
             this.btCancelar.TabIndex = 1;
             this.btCancelar.Text = "Cancelar";
             this.btCancelar.UseVisualStyleBackColor = true;
-            this.btCancelar.Click += new System.EventHandler(this.btCancelar_Click);
             // 
             // lbDNI
             // 

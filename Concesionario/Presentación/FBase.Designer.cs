@@ -1,7 +1,7 @@
 ﻿
 namespace Presentación
 {
-    partial class FormBase
+    partial class FBase
     {
         /// <summary>
         /// Variable del diseñador necesaria.
@@ -42,6 +42,8 @@ namespace Presentación
             this.TSMIListadoV = new System.Windows.Forms.ToolStripMenuItem();
             this.TSMIPresupuestos = new System.Windows.Forms.ToolStripMenuItem();
             this.TSMIConfiguracion = new System.Windows.Forms.ToolStripMenuItem();
+            this.recorridoUnoAUnoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.listadoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -63,7 +65,9 @@ namespace Presentación
             this.TSMIClientes.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.TSMIAltaC,
             this.TSMIBajaC,
-            this.TSMIBusquedaC});
+            this.TSMIBusquedaC,
+            this.recorridoUnoAUnoToolStripMenuItem,
+            this.listadoToolStripMenuItem});
             this.TSMIClientes.Name = "TSMIClientes";
             this.TSMIClientes.Size = new System.Drawing.Size(61, 20);
             this.TSMIClientes.Text = "Clientes";
@@ -71,21 +75,21 @@ namespace Presentación
             // TSMIAltaC
             // 
             this.TSMIAltaC.Name = "TSMIAltaC";
-            this.TSMIAltaC.Size = new System.Drawing.Size(126, 22);
+            this.TSMIAltaC.Size = new System.Drawing.Size(182, 22);
             this.TSMIAltaC.Text = "Alta";
             this.TSMIAltaC.Click += new System.EventHandler(this.TSMIAltaC_Click);
             // 
             // TSMIBajaC
             // 
             this.TSMIBajaC.Name = "TSMIBajaC";
-            this.TSMIBajaC.Size = new System.Drawing.Size(126, 22);
+            this.TSMIBajaC.Size = new System.Drawing.Size(182, 22);
             this.TSMIBajaC.Text = "Baja";
             this.TSMIBajaC.Click += new System.EventHandler(this.TSMIBajaC_Click);
             // 
             // TSMIBusquedaC
             // 
             this.TSMIBusquedaC.Name = "TSMIBusquedaC";
-            this.TSMIBusquedaC.Size = new System.Drawing.Size(126, 22);
+            this.TSMIBusquedaC.Size = new System.Drawing.Size(182, 22);
             this.TSMIBusquedaC.Text = "Búsqueda";
             this.TSMIBusquedaC.Click += new System.EventHandler(this.TSMIBusquedaC_Click);
             // 
@@ -98,7 +102,7 @@ namespace Presentación
             this.TSMIRecorridoUnoAUnoV,
             this.TSMIListadoV});
             this.TSMIVehiculos.Name = "TSMIVehiculos";
-            this.TSMIVehiculos.Size = new System.Drawing.Size(70, 20);
+            this.TSMIVehiculos.Size = new System.Drawing.Size(69, 20);
             this.TSMIVehiculos.Text = "Vehículos";
             // 
             // TSMIAltaV
@@ -148,14 +152,28 @@ namespace Presentación
             this.TSMIConfiguracion.Size = new System.Drawing.Size(95, 20);
             this.TSMIConfiguracion.Text = "Configuración";
             // 
-            // FormBase
+            // recorridoUnoAUnoToolStripMenuItem
+            // 
+            this.recorridoUnoAUnoToolStripMenuItem.Name = "recorridoUnoAUnoToolStripMenuItem";
+            this.recorridoUnoAUnoToolStripMenuItem.Size = new System.Drawing.Size(182, 22);
+            this.recorridoUnoAUnoToolStripMenuItem.Text = "Recorrido uno a uno";
+            this.recorridoUnoAUnoToolStripMenuItem.Click += new System.EventHandler(this.recorridoUnoAUnoToolStripMenuItem_Click);
+            // 
+            // listadoToolStripMenuItem
+            // 
+            this.listadoToolStripMenuItem.Name = "listadoToolStripMenuItem";
+            this.listadoToolStripMenuItem.Size = new System.Drawing.Size(182, 22);
+            this.listadoToolStripMenuItem.Text = "Listado";
+            this.listadoToolStripMenuItem.Click += new System.EventHandler(this.listadoToolStripMenuItem_Click);
+            // 
+            // FBase
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
-            this.Name = "FormBase";
+            this.Name = "FBase";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Pepe ";
             this.menuStrip1.ResumeLayout(false);
@@ -180,6 +198,8 @@ namespace Presentación
         private System.Windows.Forms.ToolStripMenuItem TSMIConfiguracion;
         private System.Windows.Forms.ToolStripMenuItem TSMIRecorridoUnoAUnoV;
         private System.Windows.Forms.ToolStripMenuItem TSMIListadoV;
+        private System.Windows.Forms.ToolStripMenuItem recorridoUnoAUnoToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem listadoToolStripMenuItem;
     }
 }
 
