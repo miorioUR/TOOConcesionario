@@ -32,7 +32,8 @@ namespace PersCliente
                 return null;
             }
         }
-
+        //Pre:BD iniciada
+        //Post: Devuelve todos los clientes almacenados.
         public static List<Cliente> BuscarTodos()
         {
             List<Cliente> lv = new List<Cliente>();
@@ -61,6 +62,8 @@ namespace PersCliente
         {
             return Conversores.CambioAListaCliente(BD.LISTClientes());
         }
+        //Pre: c es un dni con formato valido.
+        //Post: Devuelve true si existe en la BD algun cliente .
         public static bool Existe(string c)
         {
             return BD.CONTAINSCliente(c);
