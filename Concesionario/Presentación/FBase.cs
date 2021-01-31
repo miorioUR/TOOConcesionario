@@ -63,7 +63,7 @@ namespace Presentación
 
                         if (fc.getNombre() != "" &&  fc.getTelefono() != "")
                         {
-                                Cliente c = new Cliente(DNI, fc.getNombre(), fc.getTelefono(), Categoria.A);
+                                Cliente c = new Cliente(DNI, fc.getNombre(), fc.getTelefono(), fc.getCat());
                                 lnC.AltaCliente(c);
                         }
                         else
@@ -127,8 +127,35 @@ namespace Presentación
 
         private void TSMIBusquedaC_Click(object sender, EventArgs e)
         {
-            FID f = new FID(0);
-            f.ShowDialog();
+            FID i = new FID(0);
+            DialogResult r = i.ShowDialog();
+            string DNI = i.getID();
+
+            if (r == DialogResult.OK)
+            {
+                if (this.lnC.ExisteCliente(DNI))
+                {
+                    Cliente c = lnC.BuscarCliente(DNI);
+                    FCliente fc = new FCliente("Búsqueda de cliente");
+                    fc.setDNI(DNI, false);
+                    fc.setNombre(c.Nombre, false);
+                    fc.setTelefono(c.Telefono, false);
+                    fc.setCat(c.Valor, false);
+
+                    fc.ShowDialog();
+                }
+                else
+                {
+                    DialogResult dr = MessageBox.Show("¿Quieres introducir otro?", "No existe un cliente con ese DNI", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                    if (dr == DialogResult.Yes)
+                    {
+                        i.Dispose();
+                        this.TSMIBajaV_Click(sender, e);
+                    }
+                }
+                i.Dispose();
+            }
         }
 
         private void recorridoUnoAUnoToolStripMenuItem_Click(object sender, EventArgs e)

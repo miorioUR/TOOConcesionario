@@ -58,8 +58,8 @@ namespace Presentación
         }
         public void setCat(Categoria c, bool e)
         {
-            if (c.Equals(Categoria.A)) this.rbA.Checked = true;
-            else if (c.Equals(Categoria.B)) this.rbB.Checked = true;
+            if (c.CompareTo(Categoria.A)==0) this.rbA.Checked = true;
+            if (c.CompareTo(Categoria.B)==0) this.rbB.Checked = true;
             if (!e)
             {
                 this.rbA.Enabled = false;
