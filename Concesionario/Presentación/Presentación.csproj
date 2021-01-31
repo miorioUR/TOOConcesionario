@@ -117,6 +117,9 @@
     <EmbeddedResource Include="FListadoC.resx">
       <DependentUpon>FListadoC.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FListadoP.resx">
+      <DependentUpon>FListadoP.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FListadoV.resx">
       <DependentUpon>FListadoV.cs</DependentUpon>
     </EmbeddedResource>
@@ -129,8 +132,14 @@
     <EmbeddedResource Include="FID.resx">
       <DependentUpon>FID.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FPresupuesto.resx">
+      <DependentUpon>FPresupuesto.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FRecorridoC.resx">
       <DependentUpon>FRecorridoC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FRecorridoP.resx">
+      <DependentUpon>FRecorridoP.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FRecorridoV.resx">
       <DependentUpon>FRecorridoV.cs</DependentUpon>
@@ -148,6 +157,7 @@
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <None Include="Properties\DataSources\MDCliente.Cliente.datasource" />
+    <None Include="Properties\DataSources\MDPresupuesto.Presupuesto.datasource" />
     <None Include="Properties\DataSources\MDVehiculo.Vehiculo.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

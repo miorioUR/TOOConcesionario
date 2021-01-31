@@ -13,7 +13,7 @@ namespace Presentación
     public partial class FID : Form
     {
         private int tipo;
-        //POST: Inicia el Formulario con 0 para cliente y con cualquier otro entero para vehículo.
+        //POST: Inicia el Formulario con 0 para cliente, con 1 para vehículo y con cualquier otro entero para presupuesto.
         public FID(int t)
         {
             InitializeComponent();
@@ -22,6 +22,10 @@ namespace Presentación
             {
                 this.lbID.Text = "DNI:";
                 this.lbID.Location = new Point(54, 19);
+            }
+            if (t==1)
+            {
+                this.lbID.Text = "Número de bastidor:";
             }
         }
 

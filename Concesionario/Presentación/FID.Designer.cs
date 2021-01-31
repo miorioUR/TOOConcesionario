@@ -40,9 +40,9 @@ namespace Presentación
             this.lbID.AutoSize = true;
             this.lbID.Location = new System.Drawing.Point(3, 19);
             this.lbID.Name = "lbID";
-            this.lbID.Size = new System.Drawing.Size(102, 13);
+            this.lbID.Size = new System.Drawing.Size(82, 13);
             this.lbID.TabIndex = 0;
-            this.lbID.Text = "Número de bastidor:";
+            this.lbID.Text = "ID presupuesto:";
             // 
             // tbID
             // 
@@ -71,7 +71,7 @@ namespace Presentación
             this.btCancelar.Text = "Cancelar";
             this.btCancelar.UseVisualStyleBackColor = true;
             // 
-            // FormID
+            // FID
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -80,7 +80,7 @@ namespace Presentación
             this.Controls.Add(this.btAceptar);
             this.Controls.Add(this.tbID);
             this.Controls.Add(this.lbID);
-            this.Name = "FormID";
+            this.Name = "FID";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormID";
             this.ResumeLayout(false);

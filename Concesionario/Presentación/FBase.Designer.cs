@@ -34,6 +34,8 @@ namespace Presentación
             this.TSMIAltaC = new System.Windows.Forms.ToolStripMenuItem();
             this.TSMIBajaC = new System.Windows.Forms.ToolStripMenuItem();
             this.TSMIBusquedaC = new System.Windows.Forms.ToolStripMenuItem();
+            this.recorridoUnoAUnoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.listadoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.TSMIVehiculos = new System.Windows.Forms.ToolStripMenuItem();
             this.TSMIAltaV = new System.Windows.Forms.ToolStripMenuItem();
             this.TSMIBajaV = new System.Windows.Forms.ToolStripMenuItem();
@@ -41,9 +43,10 @@ namespace Presentación
             this.TSMIRecorridoUnoAUnoV = new System.Windows.Forms.ToolStripMenuItem();
             this.TSMIListadoV = new System.Windows.Forms.ToolStripMenuItem();
             this.TSMIPresupuestos = new System.Windows.Forms.ToolStripMenuItem();
-            this.TSMIConfiguracion = new System.Windows.Forms.ToolStripMenuItem();
-            this.recorridoUnoAUnoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.listadoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.AltaP = new System.Windows.Forms.ToolStripMenuItem();
+            this.BajaP = new System.Windows.Forms.ToolStripMenuItem();
+            this.RecorridoP = new System.Windows.Forms.ToolStripMenuItem();
+            this.ListadoP = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -52,8 +55,7 @@ namespace Presentación
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.TSMIClientes,
             this.TSMIVehiculos,
-            this.TSMIPresupuestos,
-            this.TSMIConfiguracion});
+            this.TSMIPresupuestos});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(800, 24);
@@ -92,6 +94,20 @@ namespace Presentación
             this.TSMIBusquedaC.Size = new System.Drawing.Size(182, 22);
             this.TSMIBusquedaC.Text = "Búsqueda";
             this.TSMIBusquedaC.Click += new System.EventHandler(this.TSMIBusquedaC_Click);
+            // 
+            // recorridoUnoAUnoToolStripMenuItem
+            // 
+            this.recorridoUnoAUnoToolStripMenuItem.Name = "recorridoUnoAUnoToolStripMenuItem";
+            this.recorridoUnoAUnoToolStripMenuItem.Size = new System.Drawing.Size(182, 22);
+            this.recorridoUnoAUnoToolStripMenuItem.Text = "Recorrido uno a uno";
+            this.recorridoUnoAUnoToolStripMenuItem.Click += new System.EventHandler(this.recorridoUnoAUnoToolStripMenuItem_Click);
+            // 
+            // listadoToolStripMenuItem
+            // 
+            this.listadoToolStripMenuItem.Name = "listadoToolStripMenuItem";
+            this.listadoToolStripMenuItem.Size = new System.Drawing.Size(182, 22);
+            this.listadoToolStripMenuItem.Text = "Listado";
+            this.listadoToolStripMenuItem.Click += new System.EventHandler(this.listadoToolStripMenuItem_Click);
             // 
             // TSMIVehiculos
             // 
@@ -142,29 +158,42 @@ namespace Presentación
             // 
             // TSMIPresupuestos
             // 
+            this.TSMIPresupuestos.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.AltaP,
+            this.BajaP,
+            this.RecorridoP,
+            this.ListadoP});
             this.TSMIPresupuestos.Name = "TSMIPresupuestos";
             this.TSMIPresupuestos.Size = new System.Drawing.Size(89, 20);
             this.TSMIPresupuestos.Text = "Presupuestos";
             // 
-            // TSMIConfiguracion
+            // AltaP
             // 
-            this.TSMIConfiguracion.Name = "TSMIConfiguracion";
-            this.TSMIConfiguracion.Size = new System.Drawing.Size(95, 20);
-            this.TSMIConfiguracion.Text = "Configuración";
+            this.AltaP.Name = "AltaP";
+            this.AltaP.Size = new System.Drawing.Size(182, 22);
+            this.AltaP.Text = "Alta";
+            this.AltaP.Click += new System.EventHandler(this.AltaP_Click);
             // 
-            // recorridoUnoAUnoToolStripMenuItem
+            // BajaP
             // 
-            this.recorridoUnoAUnoToolStripMenuItem.Name = "recorridoUnoAUnoToolStripMenuItem";
-            this.recorridoUnoAUnoToolStripMenuItem.Size = new System.Drawing.Size(182, 22);
-            this.recorridoUnoAUnoToolStripMenuItem.Text = "Recorrido uno a uno";
-            this.recorridoUnoAUnoToolStripMenuItem.Click += new System.EventHandler(this.recorridoUnoAUnoToolStripMenuItem_Click);
+            this.BajaP.Name = "BajaP";
+            this.BajaP.Size = new System.Drawing.Size(182, 22);
+            this.BajaP.Text = "Baja";
+            this.BajaP.Click += new System.EventHandler(this.BajaP_Click);
             // 
-            // listadoToolStripMenuItem
+            // RecorridoP
             // 
-            this.listadoToolStripMenuItem.Name = "listadoToolStripMenuItem";
-            this.listadoToolStripMenuItem.Size = new System.Drawing.Size(182, 22);
-            this.listadoToolStripMenuItem.Text = "Listado";
-            this.listadoToolStripMenuItem.Click += new System.EventHandler(this.listadoToolStripMenuItem_Click);
+            this.RecorridoP.Name = "RecorridoP";
+            this.RecorridoP.Size = new System.Drawing.Size(182, 22);
+            this.RecorridoP.Text = "Recorrido uno a uno";
+            this.RecorridoP.Click += new System.EventHandler(this.RecorridoP_Click);
+            // 
+            // ListadoP
+            // 
+            this.ListadoP.Name = "ListadoP";
+            this.ListadoP.Size = new System.Drawing.Size(182, 22);
+            this.ListadoP.Text = "Listado";
+            this.ListadoP.Click += new System.EventHandler(this.ListadoP_Click);
             // 
             // FBase
             // 
@@ -195,11 +224,14 @@ namespace Presentación
         private System.Windows.Forms.ToolStripMenuItem TSMIBajaV;
         private System.Windows.Forms.ToolStripMenuItem TSMIBusquedaV;
         private System.Windows.Forms.ToolStripMenuItem TSMIPresupuestos;
-        private System.Windows.Forms.ToolStripMenuItem TSMIConfiguracion;
         private System.Windows.Forms.ToolStripMenuItem TSMIRecorridoUnoAUnoV;
         private System.Windows.Forms.ToolStripMenuItem TSMIListadoV;
         private System.Windows.Forms.ToolStripMenuItem recorridoUnoAUnoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem listadoToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem AltaP;
+        private System.Windows.Forms.ToolStripMenuItem BajaP;
+        private System.Windows.Forms.ToolStripMenuItem RecorridoP;
+        private System.Windows.Forms.ToolStripMenuItem ListadoP;
     }
 }
 

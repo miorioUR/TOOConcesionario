@@ -79,9 +79,9 @@ namespace Presentación
             this.lbTelefono.AutoSize = true;
             this.lbTelefono.Location = new System.Drawing.Point(76, 152);
             this.lbTelefono.Name = "lbTelefono";
-            this.lbTelefono.Size = new System.Drawing.Size(49, 13);
+            this.lbTelefono.Size = new System.Drawing.Size(52, 13);
             this.lbTelefono.TabIndex = 3;
-            this.lbTelefono.Text = "Teléfono";
+            this.lbTelefono.Text = "Teléfono:";
             // 
             // tbNombre
             // 

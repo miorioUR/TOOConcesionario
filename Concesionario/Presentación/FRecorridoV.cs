@@ -37,5 +37,10 @@ namespace Presentación
 
 
         }
+
+        private void FRecorridoV_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -218,6 +218,13 @@ namespace BaseDatos
         {
             return Presupuestos[id];
         }
+        public static bool CONTAINSPresupuesto(string n)
+        {
+            if (Presupuestos.Contains(n))
+                return true;
+            else
+                return false;
+        }
         public static List<PresupuestoDato> LISTPresupuesto()
         {
             List<PresupuestoDato> lpd = Presupuestos.ToList<PresupuestoDato>();

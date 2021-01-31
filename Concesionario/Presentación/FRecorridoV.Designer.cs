@@ -288,6 +288,7 @@
             this.Controls.Add(this.lNumBastidor);
             this.Name = "FRecorridoV";
             this.Text = "Datos de un vehículo";
+            this.Load += new System.EventHandler(this.FRecorridoV_Load);
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingNavigator1)).EndInit();
             this.bindingNavigator1.ResumeLayout(false);

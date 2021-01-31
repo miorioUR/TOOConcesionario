@@ -144,9 +144,13 @@ namespace LogicaNegocio
         {
             PersistenciaPresupuesto.Añadir(p);
         }
-        public bool ExistePresupuesto(Presupuesto p)
+        public bool ExistePresupuesto(string id)
         {
-            return (PersistenciaPresupuesto.Buscar(p.Id) != null);
+            return (PersistenciaPresupuesto.ExistePresupuesto(id));
+        }
+        public Presupuesto BuscarPresupuesto(string id)
+        {
+            return PersistenciaPresupuesto.Buscar(id);
         }
         public void BajaPresupuesto(Presupuesto p)
         {
@@ -155,6 +159,10 @@ namespace LogicaNegocio
         public void ModificarPresupuesto(Presupuesto p)
         {
             PersistenciaPresupuesto.Modificar(p);
+        }
+        public List<Presupuesto> BuscarTodosPresupuestos()
+        {
+            return PersistenciaPresupuesto.ListarPresupuestos();
         }
         public void AltaValoracion(Presupuesto p, Valoracion v)
         {

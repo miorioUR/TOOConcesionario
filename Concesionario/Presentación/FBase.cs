@@ -31,7 +31,6 @@ namespace Presentación
             LN ln = new LN(e,lnC,lnV,lnP);
             InitializeComponent();
         }
-
         private void TSMIAltaC_Click(object sender, EventArgs e)
         {
             FID i = new FID(0);
@@ -72,7 +71,6 @@ namespace Presentación
                         }
                     }
                 }
-                fc.Dispose();
             }
             i.Dispose();
         }
@@ -138,11 +136,17 @@ namespace Presentación
                     Cliente c = lnC.BuscarCliente(DNI);
                     FCliente fc = new FCliente("Búsqueda de cliente");
                     fc.setDNI(DNI, false);
-                    fc.setNombre(c.Nombre, false);
-                    fc.setTelefono(c.Telefono, false);
-                    fc.setCat(c.Valor, false);
+                    fc.setNombre(c.Nombre, true);
+                    fc.setTelefono(c.Telefono, true);
+                    fc.setCat(c.Valor, true);
 
-                    fc.ShowDialog();
+                    DialogResult rr = fc.ShowDialog();
+                    
+                    if(rr == DialogResult.OK)
+                    {
+                        lnC.ModificarCliente(new Cliente(DNI,fc.getNombre(),fc.getTelefono(),fc.getCat()));
+                        MessageBox.Show("Se ha modificado correctamente el cliente.");
+                    }
                 }
                 else
                 {
@@ -229,7 +233,6 @@ namespace Presentación
                         }
                     }
                 }
-                fv.Dispose();
             }
             i.Dispose();
         }
@@ -367,6 +370,143 @@ namespace Presentación
             List<Vehiculo> lv = this.lnV.BuscarTodosVehiculos();
             FListadoV listv = new FListadoV(lv);
             listv.ShowDialog();
+        }
+
+        private void AltaP_Click(object sender, EventArgs e)
+        {
+            FID i = new FID(2);
+            DialogResult r = i.ShowDialog();
+            string ID = i.getID();
+
+            if (r == DialogResult.OK)
+            {
+                if (ID == "" || this.lnP.ExistePresupuesto(ID))
+                {
+                    DialogResult dr = MessageBox.Show("Ya existe un presupuesto con esa ID o no ha rellenado el campo 'ID'.", "¿Quieres introducir otro?", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                    if (dr == DialogResult.Yes)
+                    {
+                        i.Dispose();
+                        this.AltaP_Click(sender, e);
+                    }
+                }
+                else
+                {
+                    FID i2 = new FID(0);
+                    DialogResult r2 = i2.ShowDialog();
+                    string DNI = i2.getID();
+
+                    if (r2 == DialogResult.OK)
+                    {
+
+                        if (!this.lnC.ExisteCliente(DNI))
+                        {
+                            DialogResult dr = MessageBox.Show("No existe ningún cliente con ese DNI.", "¿Quieres introducir otro?", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                            if (dr == DialogResult.Yes)
+                            {
+                                i.Dispose();
+                                this.AltaP_Click(sender, e);
+                            }
+                        }
+                        else
+                        {
+                            bool otraValoracion = false;
+                            Presupuesto p = new Presupuesto(ID, this.e, lnC.BuscarCliente(DNI), new List<Valoracion>());
+                            lnP.AltaPresupuesto(p);
+                            FPresupuesto fp = new FPresupuesto("Alta Presupuesto");
+                            fp.setDNI(DNI, false);
+                            fp.setEmpleado(this.e.Nombre, false);
+                            fp.setID(ID, false);
+                            do {
+                                otraValoracion = false;
+                                DialogResult dr2 = fp.ShowDialog();
+
+                                if (dr2 == DialogResult.OK)
+                                {
+                                    if (fp.getPrecio() != 0 && lnV.ExisteVehiculo(fp.getNumBastidor()))
+                                    {
+                                        Valoracion v = new Valoracion(lnV.BuscarVehiculo(fp.getNumBastidor()), fp.getPrecio());
+                                        lnP.AltaValoracion(p, v);
+                                    }
+                                    else
+                                    {
+                                        MessageBox.Show("Debes introducir un precio y un vehículo contenido en la base de datos", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                    }
+                                }
+                                DialogResult final = MessageBox.Show("¿Quieres introducir otra valoración?", "Alta valoraciones", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                                if (final == DialogResult.Yes) otraValoracion = true;
+                            }
+                            while (otraValoracion);
+                            fp.Dispose();
+                        }
+                    }
+                }
+            }
+            i.Dispose();
+        }
+
+        private void BajaP_Click(object sender, EventArgs e)
+        {
+            FID i = new FID(2);
+            DialogResult r = i.ShowDialog();
+            string ID = i.getID();
+
+            if (r == DialogResult.OK)
+            {
+                if (this.lnP.ExistePresupuesto(ID))
+                {
+                    FPresupuesto fp = new FPresupuesto("Baja presupuesto");
+
+                    if (lnP.ExistePresupuesto(ID))
+                    {
+                        Presupuesto p = lnP.BuscarPresupuesto(ID);
+                        fp.setDNI(p.Cliente.Dni, false);
+                        fp.setID(p.Id, false);
+                        fp.setEmpleado(this.e.Dni, false);
+                        fp.ocultarValoracion();
+
+                        DialogResult dd = fp.ShowDialog();
+
+                        if (dd == DialogResult.OK)
+                        {
+                            DialogResult aviso = MessageBox.Show("¿Estás seguro que desea dar de baja este presupuesto?", "Aviso", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+                            if (aviso == DialogResult.Yes)
+                            {
+                                this.lnP.BajaPresupuesto(p);
+                            }
+                            MessageBox.Show("Presupuesto eliminado", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                        }
+                    }
+                    fp.Dispose();
+                }
+                else
+                {
+                    DialogResult dr = MessageBox.Show("¿Quieres introducir otro?", "No existe un presupuesto con esa ID", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                    if (dr == DialogResult.Yes)
+                    {
+                        i.Dispose();
+                        this.BajaP_Click(sender, e);
+                    }
+                }
+                i.Dispose();
+            }
+        }
+
+        private void RecorridoP_Click(object sender, EventArgs e)
+        {
+            List<Presupuesto> lp = this.lnP.BuscarTodosPresupuestos();
+            FRecorridoP fp = new FRecorridoP(lp);
+            fp.ShowDialog();
+        }
+
+        private void ListadoP_Click(object sender, EventArgs e)
+        {
+            List<Presupuesto> lp = this.lnP.BuscarTodosPresupuestos();
+            FListadoP listp = new FListadoP(lp);
+            listp.ShowDialog();
         }
     }
 }
