@@ -213,7 +213,7 @@ namespace Utilidades
             }
         }
     }
-    class Calculadora
+    public class Calculadora
     {
         public static double calcularImporte(PresupuestoDato p)
         {

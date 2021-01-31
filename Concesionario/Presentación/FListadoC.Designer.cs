@@ -46,6 +46,7 @@ namespace Presentación
             this.btDNI.TabIndex = 0;
             this.btDNI.Text = "DNI";
             this.btDNI.UseVisualStyleBackColor = true;
+            this.btDNI.Click += new System.EventHandler(this.btDNI_Click);
             // 
             // btNombre
             // 
@@ -55,6 +56,7 @@ namespace Presentación
             this.btNombre.TabIndex = 1;
             this.btNombre.Text = "Nombre";
             this.btNombre.UseVisualStyleBackColor = true;
+            this.btNombre.Click += new System.EventHandler(this.btNombre_Click);
             // 
             // btImporte
             // 
@@ -64,6 +66,7 @@ namespace Presentación
             this.btImporte.TabIndex = 2;
             this.btImporte.Text = "Importe";
             this.btImporte.UseVisualStyleBackColor = true;
+            this.btImporte.Click += new System.EventHandler(this.btImporte_Click);
             // 
             // lbNombre
             // 

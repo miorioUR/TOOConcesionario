@@ -145,6 +145,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\BD\BaseDatos.csproj">
+      <Project>{abffa57e-9624-465e-b277-a1c671dcc801}</Project>
+      <Name>BaseDatos</Name>
+    </ProjectReference>
     <ProjectReference Include="..\LNCliente\LogicaNegocio.csproj">
       <Project>{383CB744-80FF-4D1E-A2E3-D6912179A735}</Project>
       <Name>LogicaNegocio</Name>
