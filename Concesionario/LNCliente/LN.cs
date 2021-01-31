@@ -46,6 +46,24 @@ namespace LogicaNegocio
         {
             return PersistenciaCliente.Buscar(s);
         }
+        public List<Cliente> ListaClientesDNI()
+        {
+            List<Cliente> lc = PersistenciaCliente.ListarClientes();
+            lc.Sort(Comparadores.comparaClienteDNI);
+            return lc;
+        }
+        public List<Cliente> ListaClientesNombre()
+        {
+            List<Cliente> lc = PersistenciaCliente.ListarClientes();
+            lc.Sort(Comparadores.comparaClienteNombre);
+            return lc;
+        }
+        public List<Cliente> ListaClientesImporte()
+        {
+            List<Cliente> lc = PersistenciaCliente.ListarClientes();
+            lc.Sort(Comparadores.comparaClienteImporte);
+            return lc;
+        }
     }
     public class LNVehiculo
     {
@@ -183,24 +201,6 @@ namespace LogicaNegocio
         public void ModificarValoracion(Presupuesto p, Valoracion v)
         {
             PersistenciaPresupuesto.ModificarValoracion(p, v);
-        }
-        public List<Presupuesto> ListaPresupuestosDNI()
-        {
-            List<Presupuesto> lp = PersistenciaPresupuesto.ListarPresupuestos();
-            lp.Sort(Comparadores.comparaPresupuestosDNI);
-            return lp;
-        }
-        public List<Presupuesto> ListaPresupuestosNombre()
-        {
-            List<Presupuesto> lp = PersistenciaPresupuesto.ListarPresupuestos();
-            lp.Sort(Comparadores.comparaPresupuestosNombre);
-            return lp;
-        }
-        public List<Presupuesto> ListaPresupuestosImporte()
-        {
-            List<Presupuesto> lp = PersistenciaPresupuesto.ListarPresupuestos();
-            lp.Sort(Comparadores.comparaPresupuestosImporte);
-            return lp;
         }
     }
 

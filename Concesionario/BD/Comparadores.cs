@@ -12,11 +12,11 @@ namespace Utilidades
 {
     public class Comparadores
     {
-        public static int comparaPresupuestosDNI(Presupuesto p1, Presupuesto p2)
+        public static int comparaClienteDNI(Cliente c1, Cliente c2)
         {
-            if(p1.Equals(null))
+            if (c1.Equals(null))
             {
-                if (p2.Equals(null))
+                if (c2.Equals(null))
                 {
                     return 0;
                 }
@@ -27,21 +27,21 @@ namespace Utilidades
             }
             else
             {
-                if (p2.Equals(null))
+                if (c2.Equals(null))
                 {
                     return 1;
                 }
                 else
                 {
-                    return p1.Cliente.Dni.CompareTo(p2.Cliente.Dni);
+                    return c1.Dni.CompareTo(c2.Dni);
                 }
             }
         }
-        public static int comparaPresupuestosNombre(Presupuesto p1,Presupuesto p2)
+        public static int comparaClienteNombre(Cliente c1, Cliente c2)
         {
-            if (p1.Equals(null))
+            if (c1.Equals(null))
             {
-                if (p2.Equals(null))
+                if (c2.Equals(null))
                 {
                     return 0;
                 }
@@ -52,21 +52,21 @@ namespace Utilidades
             }
             else
             {
-                if (p2.Equals(null))
+                if (c2.Equals(null))
                 {
                     return 1;
                 }
                 else
                 {
-                    return p1.Cliente.Nombre.CompareTo(p2.Cliente.Nombre);
+                    return c1.Nombre.CompareTo(c2.Nombre);
                 }
             }
         }
-        public static int comparaPresupuestosImporte(Presupuesto p1,Presupuesto p2)
+        public static int comparaClienteImporte(Cliente c1, Cliente c2)
         {
-            if (p1.Equals(null))
+            if (c1.Equals(null))
             {
-                if (p2.Equals(null))
+                if (c2.Equals(null))
                 {
                     return 0;
                 }
@@ -77,138 +77,13 @@ namespace Utilidades
             }
             else
             {
-                if (p2.Equals(null))
+                if (c2.Equals(null))
                 {
                     return 1;
                 }
                 else
                 {
-                    return Calculadora.calcularImporte(p1).CompareTo(Calculadora.calcularImporte(p2));
-                }
-            }
-        }
-        public static int comparaVehiculosNumBastidor(Vehiculo v1,Vehiculo v2)
-        {
-            if (v1.Equals(null))
-            {
-                if (v2.Equals(null))
-                {
-                    return 0;
-                }
-                else
-                {
-                    return -1;
-                }
-            }
-            else
-            {
-                if (v2.Equals(null))
-                {
-                    return 1;
-                }
-                else
-                {
-                    return v1.NumBastidor.CompareTo(v2.NumBastidor);
-                }
-            }
-        }
-        public static int comparaVehiculosMarca(Vehiculo v1, Vehiculo v2)
-        {
-            if (v1.Equals(null))
-            {
-                if (v2.Equals(null))
-                {
-                    return 0;
-                }
-                else
-                {
-                    return -1;
-                }
-            }
-            else
-            {
-                if (v2.Equals(null))
-                {
-                    return 1;
-                }
-                else
-                {
-                    return v1.Marca.CompareTo(v2.Marca);
-                }
-            }
-        }
-        public static int comparaVehiculosModelo(Vehiculo v1, Vehiculo v2)
-        {
-            if (v1.Equals(null))
-            {
-                if (v2.Equals(null))
-                {
-                    return 0;
-                }
-                else
-                {
-                    return -1;
-                }
-            }
-            else
-            {
-                if (v2.Equals(null))
-                {
-                    return 1;
-                }
-                else
-                {
-                    return v1.Modelo.CompareTo(v2.Modelo);
-                }
-            }
-        }
-        public static int comparaVehiculosPotencia(Vehiculo v1, Vehiculo v2)
-        {
-            if (v1.Equals(null))
-            {
-                if (v2.Equals(null))
-                {
-                    return 0;
-                }
-                else
-                {
-                    return -1;
-                }
-            }
-            else
-            {
-                if (v2.Equals(null))
-                {
-                    return 1;
-                }
-                else
-                {
-                    return v1.Potencia.CompareTo(v2.Potencia);
-                }
-            }
-        }
-        public static int comparaVehiculosPrecio(Vehiculo v1, Vehiculo v2)
-        {
-            if (v1.Equals(null))
-            {
-                if (v2.Equals(null))
-                {
-                    return 0;
-                }
-                else
-                {
-                    return -1;
-                }
-            }
-            else
-            {
-                if (v2.Equals(null))
-                {
-                    return 1;
-                }
-                else
-                {
-                    return Calculadora.calcularPrecio(v1).CompareTo(Calculadora.calcularPrecio(v2));
+                    return Calculadora.calcularPago(c1).CompareTo(Calculadora.calcularPago(c2));
                 }
             }
         }
@@ -240,6 +115,18 @@ namespace Utilidades
             else { importe = importe * 1.15; }
 
             return importe;
+        }
+        public static double calcularPago(Cliente c)
+        {
+            double pago = 0;
+            foreach (PresupuestoDato p in BD.Presupuestos)
+            {
+                if (p.Cliente.Dni.Equals(c.Dni)) 
+                {
+                    pago = calcularImporte(p);
+                }
+            }
+            return pago;
         }
         public static double calcularPrecio(VehiculoDato v)
         {
