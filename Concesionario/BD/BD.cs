@@ -96,6 +96,11 @@ namespace BaseDatos
         {
             Clientes.Remove(c.Dni);
         }
+        public static List<ClienteDato> LISTClientes()
+        {
+            List<ClienteDato> lcd = Clientes.ToList<ClienteDato>();
+            return lcd;
+        }
         //METODOS VEHICULO-----------------------------
         public static void INSERTVehiculo(VehiculoDato v)
         {
@@ -175,6 +180,11 @@ namespace BaseDatos
             else
                 return false;
         }
+        public static List<VehiculoDato> LISTVehiculos()
+        {
+            List<VehiculoDato> lvd = Vehiculos.ToList<VehiculoDato>();
+            return lvd;
+        }
         //METODOS PRESUPUESTOS ----------------------------------------
         public static void INSERTPresupuesto(PresupuestoDato p)
         {
@@ -192,6 +202,12 @@ namespace BaseDatos
         public static PresupuestoDato SELECTPresupuesto(string id)
         {
             return Presupuestos[id];
+        }
+        public static List<PresupuestoDato> LISTPresupuesto()
+        {
+            List<PresupuestoDato> lpd = Presupuestos.ToList<PresupuestoDato>();
+            //lpd.Sort(Utilidades.Comparadores.comparaPresupuestosDNI);
+            return lpd;
         }
         public static void INSERTValoracion(PresupuestoDato p, ValoracionDato v)
         {

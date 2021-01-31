@@ -46,6 +46,9 @@ namespace PersCliente
         {
             BD.DELETECliente(new ClienteDato(c.Dni));
         }
+        public static List<Cliente> ListarClientes()
+        {
+            return Conversores.CambioAListaCliente(BD.LISTClientes());
+        }
     }
 }
-

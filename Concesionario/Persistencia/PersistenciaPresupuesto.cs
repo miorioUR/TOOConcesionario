@@ -77,5 +77,9 @@ namespace PersPresupuestos
         {
             BD.DELETEValoracion(BD.SELECTPresupuesto(p.Id), Utilidades.Conversores.CambioAValoracionDato(v));
         }
+        public static List<Presupuesto> ListarPresupuestos()
+        {
+            return Utilidades.Conversores.CambioAListaPresupuesto(BD.LISTPresupuesto());
+        }
     }
 }

@@ -130,5 +130,9 @@ namespace PersVehiculo
         {
             return BD.CONTAINSVehiculoSegundaMano(n);
         }
+        public static List<Vehiculo> ListarVehiculos()
+        {
+            return Utilidades.Conversores.CambioAListaVehiculo(BD.LISTVehiculos());
+        }
     }
 }

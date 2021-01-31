@@ -9,6 +9,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Utilidades;
 
 namespace LogicaNegocio
 {
@@ -147,6 +148,24 @@ namespace LogicaNegocio
         public void ModificarValoracion(Presupuesto p, Valoracion v)
         {
             PersistenciaPresupuesto.ModificarValoracion(p, v);
+        }
+        public List<Presupuesto> ListaPresupuestosDNI()
+        {
+            List<Presupuesto> lp = PersistenciaPresupuesto.ListarPresupuestos();
+            lp.Sort(Comparadores.comparaPresupuestosDNI);
+            return lp;
+        }
+        public List<Presupuesto> ListaPresupuestosNombre()
+        {
+            List<Presupuesto> lp = PersistenciaPresupuesto.ListarPresupuestos();
+            lp.Sort(Comparadores.comparaPresupuestosNombre);
+            return lp;
+        }
+        public List<Presupuesto> ListaPresupuestosImporte()
+        {
+            List<Presupuesto> lp = PersistenciaPresupuesto.ListarPresupuestos();
+            lp.Sort(Comparadores.comparaPresupuestosImporte);
+            return lp;
         }
     }
 
